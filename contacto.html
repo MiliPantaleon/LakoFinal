@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+
+body {
+    margin: 0;
+    position: relative;
+    background-color: #14152D;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        overflow: hidden;
+    }
+    }
+        * {
+    margin: 0;
+    padding: 0;
+  
+}
+
+
+.logo{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+        background-color: transparent;
+        
+    }
+
+
+.overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vh;
+            height: 100vh;
+            background: rgba(240, 237, 237, 0.178);
+            z-index: 1;
+        }
+
+.navbar-toggle {    
+        cursor: pointer;
+        display: none;
+        justify-content: center;
+    }
+
+.bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+.menu {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;   
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: transparent;
+        color: white;
+        list-style: none;
+        padding: 70px;     
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 21px; 
+        z-index: 1;  
+}
+
+.menu li {
+        margin-right: 20px;
+}
+
+
+.menu li a {
+        text-decoration: none;
+        color: white;
+}
+
+.menu li:hover a {
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+.navbar {  
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      background-color: transparent;
+      top: 100px;
+      left: 10%;
+      padding: 40px;  /*padding del simbolo de menu*/ 
+      z-index: 1;
+      top: 0;
+      width: 100%;
+  }
+
+ .logo {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+   
+      width: 200px;
+      height: auto;
+      flex-shrink: 0;
+      background-color: transparent;     
+  }
+
+.navbar-toggle { 
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 2;
+}
+
+.menu {
+      display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
+      flex-direction: column;
+      background-color: rgba(169, 169, 169, 0.7); 
+      position: fixed;
+      top: 0px; /*margen de la esquina superior de la pantalla*/ 
+      left: 0px; /*margen izquierdo de la pantalla*/
+      width: 40%; /*fondo gris ancho*/
+      height: 100vh; /*fondo gris alto*/  
+      overflow-y:auto;
+      margin: 0;
+    
+    
+}
+
+.menu li {
+      align-items: center;
+      color: white;
+      position: relative;
+      margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
+  }
+
+  .menu li:hover a {
+  font-weight: bold;
+  border-bottom: 5px solid white; /* Otra forma de subrayar */
+  /* O puedes cambiar el color del texto */
+  color: white;
+}
+}
+
+
+.text-along-logo {
+    position: absolute;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;      
+    top:50%; /* Posiciona el formulario en el centro vertical de la pantalla */
+    left: 10%; /* Posiciona el formulario en el centro horizontal de la pantalla */
+    transform: translate(-10%, -50%); /* Centra el formulario exactamente */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+}
+
+.contact-form {
+    width: 300px; /* Ancho del formulario */
+    background-color: #3C3E88;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top:50%; /* Posiciona el formulario en el centro vertical de la pantalla */
+    left: 50%; /* Posiciona el formulario en el centro horizontal de la pantalla */
+    transform: translate(-50%, -50%); /* Centra el formulario exactamente */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+}
+
+.contact-form label {
+            margin-bottom: 0.5rem;
+            font-size: 16px; 
+            font-family: 'Noto Sans', sans-serif;     
+            color: white;  
+        }
+
+.contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;      
+            font-family: Arial, Helvetica, sans-serif; 
+            color:black;
+        }
+
+.contact-form input[type="enviar"] {
+            background-color: #cdcdcd;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 21px;
+            color: #28295B;
+            cursor: pointer;
+        
+        }
+
+.contact-form input[type="enviar"]:hover {
+            background-color: #cdcdcd;
+        }
+
+
+@media screen and (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+    .text-along-logo {
+            position: absolute;
+            color: white;
+            font-size: 21px;
+            text-decoration: none;
+            font-family: 'Noto Sans', sans-serif;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            white-space: nowrap;
+            z-index: -1;
+     
+        }
+
+    .contact-form {
+        width: 80%; /* Ancho del formulario ajustado para dispositivos móviles */
+        background-color: #3C3E88;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        top: 70%; /* Ajustado para centrar el formulario en dispositivos móviles */
+        left: 50%;
+        transform: translate(-50%, -50%);   
+        z-index: -1;
+     
+       
+    }
+}
+
+footer {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 16px;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        text-align: center;
+        padding: 20px;
+
+        }
+
+.social-footer-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+.social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        margin-top: 35%;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+        }
+
+        .social-footer-wrapper ul {
+            list-style: none;
+        }
+
+        .social-footer-wrapper ul li {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 10px ;
+            text-align: center;
+            cursor: pointer;
+            float: left;
+            transition: all 0.5s ease;
+        }
+
+        .social-footer-wrapper ul li .fa { 
+            color: white;
+            margin-top: 20px; 
+            transition: all 0.5 ease;
+        }
+
+        .social-footer-wrapper ul li:hover .instagram, 
+        .social-footer-wrapper ul li:hover .fa-instagram, 
+        .social-footer-wrapper ul li:hover .google, 
+        .social-footer-wrapper ul li:hover .fa-google, 
+        .social-footer-wrapper ul li:hover .linkedin, 
+        .social-footer-wrapper ul li:hover .fa-linkedin, 
+        .social-footer-wrapper ul li:hover .whatsapp, 
+        .social-footer-wrapper ul li:hover .fa-whatsapp { 
+            border: 5px solid white;
+            box-shadow: 0 0 15px white;
+            transition: all 0.5s ease;
+        }
+
+
+@media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
+
+    .social-footer-wrapper {
+        position: relative;
+        margin-top: 20px; /* Ajusta la separación entre el formulario y los iconos de redes sociales */
+        display: flex;
+        flex-direction: column;
+        margin-top: 120%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 20px; /* Ajusta la separación entre el formulario y el footer */
+    }
+
+}
+}
+   
+</style>
+</head>
+<body>
+
+<a href="index.html">   
+    <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
+</a>
+
+<nav class="navbar">
+    <div class="navbar-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+
+    </div>
+    <ul class="menu">
+        <li><a href="proyectos.html" onclick="closeMenu()">Proyectos</a></li>
+        <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
+        <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+    </ul>
+    
+    
+</nav>
+
+
+<div class="text-along-logo">
+    <h2>¿Estás planeando <br>un nuevo proyecto?</h2>
+    <p>Completa el formulario</p>
+   
+</div>
+
+
+<form class="contact-form" action="enviar_formulario.php" method="post">
+    <label for="full-name">Nombre</label>
+    <input type="text" id="full-name" name="full-name" required>
+
+    <label for="email">Mail</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Telefono</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="message">Consulta</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <input type="enviar" value="Enviar">
+</form>
+
+<div class="social-footer-wrapper">
+    <ul class="social-icons">
+        <li class="instagram"><a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng=="><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+        <li class="mail"><a href="mailto:ventas@lako.com.ar"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com/mynetwork/?trk=eml-email_m2m_invite_single_01-invitation~card-0-accept~invite"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+        <li class="whatsapp" id="whatsapp-icon">
+            <a href="https://wa.me/123456789"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+    <footer>
+        <h3>2023 Lako diseño y arquitectura. Todos los derechos reservados.</h3>
+    </footer>
+  </div>
+  
+
+<script>
+    // Función para mostrar/ocultar el menú al hacer clic en el ícono de hamburguesa
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+    }
+  
+    // Función para cerrar el menú
+    function closeMenu() {
+        var menu = document.querySelector('.menu');
+        menu.style.display = 'none';
+    }
+  
+    // Agregar un evento de clic al documento para cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function (event) {
+        var menu = document.querySelector('.menu');
+        var navbarToggle = document.querySelector('.navbar-toggle');
+        
+        // Comprobar si se hizo clic en el ícono de hamburguesa para no cerrar el menú
+        if (navbarToggle.contains(event.target)) {
+            return;
+        }
+  
+        // Comprobar si se hizo clic dentro del menú
+        if (!menu.contains(event.target) && menu.style.display === 'flex') {
+            menu.style.display = 'none';
+        }
+    });
+  </script>
+  <script>
+    document.getElementById('whatsapp-icon').addEventListener('click', function () {
+        // Reemplaza el número de teléfono con el tuyo
+        window.open('https://wa.me/5491132416414', '_blank');
+    });
+</script>
+  
+</body>
+</html>
