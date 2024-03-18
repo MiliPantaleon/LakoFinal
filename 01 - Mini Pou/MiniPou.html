@@ -19,127 +19,133 @@
             margin: 0;
             position: relative;
             height: 100vh;
-            background-color: #14152D;
-            overflow-x: hidden;
+            background-color: #f2f2f2;
+            overflow-x: hidden; /* Anula el scroll horizontal */        
         }
 
-        .logo {
+        .logo{
             position: absolute;
-            top: 10%;
+            padding-top: 150px;
             left: 10%;
             transform: translate(-50%, -50%);
             width: 200px;
-            height: auto;
+            height: 20%;
             flex-shrink: 0;
             background-color: transparent;
+       
         }
 
-        .navbar-toggle {
-            cursor: pointer;
-            display: none;
-            justify-content: center;
-        }
+        .navbar-toggle {    
+        cursor: pointer;
+        display: none;
+        justify-content: center;
+    }
 
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px 0;
-        }
 
-        .menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: transparent;
-            color: white;
-            list-style: none;
-            padding: 70px;
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 21px;
-            z-index: 1;
-        }
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color:#14152D;
+        margin: 5px 0;
+    }
 
-        .menu li {
-            margin-right: 20px;
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .menu li:hover a {
-            font-weight: bold;
-            border-bottom: 5px solid white;
-            color: white;
-        }
-
-        @media screen and (max-width: 768px) {
-
-.navbar {  
+.menu {   
         display: flex;
-        justify-content: left;
-        align-items: left;
-        background-color: transparent;
-        top: 100px;
-        left: 10%;
-        padding: 40px;  /*padding del simbolo de menu*/ 
-        z-index: 1;
-        top: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color:  #14152D;
+        list-style: none;
+        padding: 40px;     
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 21px;       
+        margin-top: 0%; 
         width: 100%;
-    }
-
-
-    .logo {
-        position: absolute;
-        top: 100px;
-        left: 50%;  
-        width: 200px;
-        height: auto;
-        flex-shrink: 0;
-        background-color: transparent;     
-    }
-
-.navbar-toggle { 
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      order: 2;
-}
-
-.menu {
-      display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
-      flex-direction: column;
-      background-color: rgba(169, 169, 169, 0.7); 
-      position: fixed;
-      top: 0px; /*margen de la esquina superior de la pantalla*/ 
-      left: 0px; /*margen izquierdo de la pantalla*/
-      width:40%; /*fondo gris ancho*/
-      height: 100vh; /*fondo gris alto*/  
-      overflow-y:auto;
-      margin: 0;     
+        height: 75px;
+        object-fit: cover;   
+        z-index: 1;          
+       }
     
-}
- 
-.menu li {
-      align-items: center;
-      color: white;
-      position: relative;
-      margin-top:20%; /* Ajustado para mover el texto hacia la parte superior */
-  }
 
+.menu li {
+        margin-right: 20px;
+}
+
+
+.menu li a {
+        text-decoration: none;
+        color: white;
+}
 
 .menu li:hover a {
-  font-weight: bold;
-  border-bottom: 5px solid white; /* Otra forma de subrayar */
-  /* O puedes cambiar el color del texto */
-  color: white;
-}
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
 }
 
+   
+@media screen and (max-width: 768px) {
+
+            .navbar {  
+                    display: flex;
+                    justify-content: left;
+                    align-items: left;
+                    background-color: transparent;
+                    top: 100px;
+                    left: 10%;
+                    padding: 40px;  /*padding del simbolo de menu*/ 
+                    z-index: 1;
+                    top: 0;
+                    width: 100%;
+                    
+                }
+
+            .logo {
+                    position: absolute;  
+                    left: 50%;
+                    width: 150px;
+                    height: auto;
+                    flex-shrink: 0;
+                    background-color: transparent;     
+                    margin-top: 10px;
+                }
+
+            .navbar-toggle { 
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    order: 2;
+            }
+
+            .menu {
+                    display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
+                    flex-direction: column;
+                    background-color: rgba(20, 21, 45, 0.7);  
+                    position: fixed;
+                    top: 0px; /*margen de la esquina superior de la pantalla*/ 
+                    left: 0px; /*margen izquierdo de la pantalla*/
+                    width: 40%; /*fondo gris ancho*/
+                    height: 100vh; /*fondo gris alto*/  
+                    overflow-y:auto;
+                    margin: 0;     
+            }
+
+            .menu li {
+                    align-items: center;
+                    color: white;
+                    position: relative;
+                    margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
+                }
+
+            .menu li:hover a {
+                font-weight: bold;
+                border-bottom: 5px solid white; /* Otra forma de subrayar */
+                /* O puedes cambiar el color del texto */
+                color: white;
+            }
+}
 .text-along-logo {
             text-align: left;
             position: absolute;
@@ -149,7 +155,7 @@
         }
 
 .title {        
-            color: white;
+            color: #818181;
             font-size: 37px;
             text-decoration: bold;
             font-family: 'Noto Sans', sans-serif;
@@ -173,25 +179,28 @@
 
 @media screen and (max-width: 768px){
     .text-along-logo {
-            text-align: left;
+            text-align: center;
             position: absolute;
-            top: 35%;
+            top: 40%;
             left:50%;
             transform: translate(-50%, -50%);
+            background-color: #14152D;
+            width: 100%;
         }
-    .title {        
+    .title
+     {        
             color: white;
             font-size: 21px;
             text-decoration: bold;
             font-family: 'Noto Sans', sans-serif;
         }
+    .subtitle{
+        color: white;
+        margin-bottom: 1%;
+    }
+
          .text-along-logo::after {       
-            content: "";
-            display: block;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, #5052B6, #818181);
-            margin-top: 10px;
+          display: none;
         }
 
 }
@@ -232,7 +241,7 @@
     margin: 0 5px;
     border: none;
     border-radius: 50%;
-    background-color: #fff; /* Color de fondo por defecto */
+    background-color: #14152D; /* Color de fondo por defecto */
     cursor: pointer;
 }
 
@@ -251,7 +260,7 @@
             border: none;
             cursor: pointer;
             font-size: 80px;
-            color: white;
+            color: #14152D;
         }
 
 .carousel-control-prev {
@@ -264,11 +273,11 @@
 
 
 @media screen and (max-width: 768px) {
-    .swiffy-slider {
+.swiffy-slider {
         margin-top: 50%; /* Usar vh para centrar el carrusel verticalmente */
     }
 
-    .slider-container {
+.slider-container {
         overflow: hidden;
         object-fit: cover; /* Ajustar el tamaño de la imagen manteniendo la relación de aspecto */
         width: 100%;
@@ -276,14 +285,14 @@
         margin: 10vh auto 5vh; /* Añadir un margen superior para separar el carrusel de las flechas */
     }
 
-    .slider-indicators button {
+.slider-indicators button {
 
     background-color:transparent; /* Color de fondo por defecto */
     cursor: pointer;
 }
 
-   .swiffy-slider .carousel-control-prev,
-    .carousel-control-next {             
+.swiffy-slider .carousel-control-prev,
+.carousel-control-next {             
             width: 30px;
             height: 50px;
             margin-top: -20%;
@@ -297,61 +306,18 @@
             color: transparent;
             padding: -10px;
         }
-
-
 }
-
-
-@media screen and (max-width: 768px) {
-    .swiffy-slider {
-        margin-top: 50%; /* Usar vh para centrar el carrusel verticalmente */
-    }
-
-    .slider-container {
-        overflow: hidden;
-        object-fit: cover; /* Ajustar el tamaño de la imagen manteniendo la relación de aspecto */
-        width: 100%;
-        height: 50%;
-        margin: 10vh auto 5vh; /* Añadir un margen superior para separar el carrusel de las flechas */
-    }
-
-    .slider-indicators button {
-
-    background-color:trn; /* Color de fondo por defecto */
-    cursor: pointer;
-}
-
-   .swiffy-slider .carousel-control-prev,
-    .carousel-control-next {             
-            width: 30px;
-            height: 50px;
-            margin-top: -20%;
-            position: absolute;
-            z-index: 1;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 37px;
-            color: transparent;
-            padding: -10px;
-        }
-
-
-}
-
 
 footer {
             font-family: 'Noto Sans', sans-serif;
             font-size: 16px;
-            color: white;      
+            color: #14152D;      
             bottom: 0;          
             width: 100%;
             background-color: transparent;
             text-align: center;
             padding-bottom: 20px;
         }
-
 
 .social-footer-wrapper {
             display: flex;
@@ -388,7 +354,7 @@ footer {
 }
 
 .social-footer-wrapper ul li .fa { 
-    color: white;
+    color: #14152D;
     margin-top: 20px; 
     transition: all 0.5 ease;
 }
@@ -446,8 +412,6 @@ footer {
     box-shadow: 0 0 15px white;
     transition: all 0.5s ease;
 }
-
-
     </style>
 </head>
 
@@ -465,7 +429,7 @@ footer {
             <div class="bar"></div>
         </div>
         <ul class="menu">
-            <li class="current"><a href="D:\Users\Mili\Desktop\Mili\09 - web\Lako WEB\proyectos.html"
+            <li class="current"><a href="D:\Users\Mili\Desktop\Mili\09 - web\Lako WEB\repositorio_lako\proyectos.html"
                     onclick="closeMenu()">Proyectos</a></li>
             <li><a href="D:\Users\Mili\Desktop\Mili\09 - web\Lako WEB\NuestraHistoria.html"
                     onclick="closeMenu()">Nuestra historia</a></li>
