@@ -13,12 +13,9 @@ body {
             margin: 0;
             position: relative;
             height: 100vh;
-            background-color: #14152D;
-            overflow-x: hidden; /* Anula el scroll horizontal */
-         
+            background-color: #f2f2f2;
+            overflow-x: hidden; /* Anula el scroll horizontal */        
         }
-
-
 
 .logo{
         position: absolute;
@@ -26,12 +23,10 @@ body {
         left: 10%;
         transform: translate(-50%, -50%);
         width: 200px;
-        height: auto;
+        height: 20%;
         flex-shrink: 0;
         background-color: transparent;
-        
     }
-
 
 .overlay {
             position: fixed;
@@ -39,7 +34,6 @@ body {
             left: 0;
             width: 100vh;
             height: 100vh;
-            background: rgba(240, 237, 237, 0.178);
             z-index: 1;
         }
 
@@ -60,18 +54,18 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        display: flex;   
-        justify-content: center;
-        align-items: center;
         text-align: center;
-        background-color: transparent;
+        background-color:  #14152D;
         color: white;
         list-style: none;
-        padding: 70px;     
+        padding: 80px;     
         font-family: 'Noto Sans', sans-serif;
         font-size: 21px; 
-        z-index: 1;  
-}
+        z-index: 1; 
+        margin-top: 0%; 
+        width: 100%;
+        object-fit: cover;            
+       }
 
 .menu li {
         margin-right: 20px;
@@ -93,7 +87,7 @@ body {
 
 @media screen and (max-width: 768px) {
 
-  .navbar {  
+.navbar {  
         display: flex;
         justify-content: left;
         align-items: left;
@@ -106,7 +100,7 @@ body {
         width: 100%;
     }
 
-   .logo {
+.logo {
         position: absolute;
         top: 100px;
         left: 50%;
@@ -128,16 +122,14 @@ body {
 .menu {
         display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
         flex-direction: column;
-        background-color: rgba(169, 169, 169, 0.7); 
+        background-color: rgba(20, 21, 45, 0.7);  
         position: fixed;
         top: 0px; /*margen de la esquina superior de la pantalla*/ 
         left: 0px; /*margen izquierdo de la pantalla*/
         width: 40%; /*fondo gris ancho*/
         height: 100vh; /*fondo gris alto*/  
         overflow-y:auto;
-        margin: 0;
-      
-      
+        margin: 0;     
 }
 
 .menu li {
@@ -147,7 +139,7 @@ body {
         margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
     }
 
-    .menu li:hover a {
+.menu li:hover a {
     font-weight: bold;
     border-bottom: 5px solid white; /* Otra forma de subrayar */
     /* O puedes cambiar el color del texto */
@@ -155,89 +147,84 @@ body {
 }
 }
 
-
 .gallery {
             display: flex;  
             flex-wrap: wrap ;                 
             justify-content: center;
             padding: 20px;  
-            margin-top: 80px;           
+            margin-top: 80px;          
         }
 
 .gallery a {
         text-decoration: none; /* Elimina el subrayado de los enlaces dentro de la galería */
         color: inherit; /* Utiliza el color de texto predeterminado para los enlaces */
-    }
+       }
 
 .photo{
             width: calc(40% - 10px); /* Dos columnas con espacio entre ellas */
-            margin-bottom: 20px; /* Espacio entre las filas de imágenes */
+            margin-bottom: 30px; /* Espacio entre las filas de imágenes */
             margin-left: 20px;
             margin-right: 20px;
             position: relative;
             overflow: hidden;
             text-align: center;    
+            position: relative; /* Asegura que .title se posicione correctamente con respecto a .photo */
+            transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
+        
         }
 
- .photo img {           
-            width: 80%;
-            height: 500px;          
+.photo img {           
+            width: 100%;
+            height: 600px;          
             display: block;   
             margin: 0 auto ;
             overflow: hidden; /* Para recortar imágenes más grandes */   
             object-fit: cover; /* Para mantener la relación de aspecto */  
             transition: filter 0.3s ease, opacity 0.5s ease;
-            filter: grayscale(100%);
+            filter: grayscale(100%);        
         }
 
+.photo:hover {
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3); /* Ajusta la sombra según tus preferencias */
+}
 .photo:hover img {         
             opacity: 0.5;
             filter: grayscale(0%);
         }
 
-.photo.title{
+.title{
             position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
+            background-color: #14152D; /* Cambia el color de fondo según tus preferencias */
+            width: 100%; /* Ancho completo dentro de .photo */
+            height: 100px;
+            bottom: 10px; /* Coloca .title en la parte inferior de .photo */
+            left:0; /* Alinea .title a la izquierda de .photo */
+            padding: 10px; /* Ajusta el relleno según tus preferencias */
+            box-sizing: border-box; 
             text-align: center;
-            transform: translate(-50%, -50%);
-            background-color:white;
-            padding: 5px 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;      
-            margin-top: 10px;
-            width: 100%;
-            box-sizing: border-box;
+            object-position: center; 
         }
 
-.photo:hover title {
-            opacity: 1;
-        }
-        
 .title h2 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold; 
     font-size: 21px; /* Tamaño del título */
     color: white; /* Color del texto */
-    margin-bottom: 3px; /* Espacio entre el título y el subtítulo */
-   
+    margin-top: 2px; /* Espacio entre el título y el subtítulo */  
+    padding-bottom: 1px;
+    
 }
 
 .title p {
     font-family: 'Noto Sans', sans-serif;
     font-size: 17px; /* Tamaño del título */
-    color: white; /* Color del texto */
+    color: white; /* Color del texto */   
+    margin-top: 2px;
 }
 
 
-.photo:hover .title {
-    opacity: 1;
-}
         
-
-
-     /* Estilos para tamaños de pantalla más pequeños */
+/* Estilos para tamaños de pantalla más pequeños */
 @media screen and (max-width: 768px) {
             .gallery {
               display: flex;
@@ -261,7 +248,6 @@ body {
             }
   }
 
-
 footer {
             font-family: 'Noto Sans', sans-serif;
             font-size: 16px;
@@ -272,7 +258,6 @@ footer {
             text-align: center;
             padding-bottom: 20px;
         }
-
 
 .social-footer-wrapper {
             display: flex;
@@ -368,9 +353,7 @@ footer {
     transition: all 0.5s ease;
 }
 
-
-
-  </style>
+</style>
 </head>
 
 <body>
@@ -397,15 +380,14 @@ footer {
     </nav>
 
 
-
 <div class="gallery">
   <div class="photo"> 
     <a href="01 - Mini Pou\MiniPou.html">
         <img src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Local ropa minipou">
-        <span class="title">
+        <div class="title">
             <h2> Mini pou</h2>
             <p>CABA</p>
-        </span>
+        </div>
     </a>
   </div>
 
@@ -414,7 +396,6 @@ footer {
         <img src="00 - Fotos principales/03 - Tapa Puro Escabio.jpg" alt="Puro escabio locales">
         <span class="title">
           <h2> Puro Escabio</h2>
-          
         </span>
       </a>
       </div>
