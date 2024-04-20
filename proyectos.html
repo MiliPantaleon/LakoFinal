@@ -15,7 +15,7 @@ body {
             height: 100vh;
             background-color: #f2f2f2;
             overflow-x: hidden; /* Anula el scroll horizontal */       
-            overflow-y: hidden; 
+    
         }
 
 .logo{
@@ -224,8 +224,10 @@ body {
 
 /* Estilos para tamaños de pantalla más pequeños */
 @media screen and (max-width: 768px) {
-
-  .photo{
+body {
+  overflow-y: hidden;
+}
+.photo{
             width: 80%; 
             overflow: hidden;
             text-align: center;    
@@ -250,7 +252,6 @@ body {
     height: 60px;
     bottom: 0px; /* Coloca .title en la parte inferior de .photo */
     left:0; /* Alinea .title a la izquierda de .photo */
-   
     padding: 0px; /* Ajusta el relleno según tus preferencias */
     box-sizing: border-box; 
     text-align: center;
