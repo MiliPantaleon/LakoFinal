@@ -222,17 +222,19 @@ body {
 
 /* Estilos para tamaños de pantalla más pequeños */
 @media screen and (max-width: 768px) {
-  body {
-            margin: 0;
-            position: relative;
-            height: 100vh;
-            background-color: #f2f2f2;
-            overflow-x: hidden;
-        }
+
+.center { 
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #dbe4ed; /
+}
+
+
 .photo{
             width: 100%; 
-            overflow: hidden;
-            text-align: center;    
+            overflow: hidden;      
             transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */  
         }
 
