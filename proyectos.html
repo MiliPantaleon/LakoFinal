@@ -2,189 +2,547 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
-        body {
+
+body {
             margin: 0;
-            font-family: 'Noto Sans', sans-serif;
+            position: relative;
+            height: 100vh;
             background-color: #f2f2f2;
         }
 
-        .logo {
-            width: 150px;
-            height: auto;
-            margin: 10px auto;
-            display: block;
-        }
+.logo{
+        position: absolute;
+        padding-top: 150px;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 20%;
+        flex-shrink: 0;
+        background-color: transparent;
+       
+    }
 
-        .navbar {
-            background-color: #14152D;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .navbar-toggle {
-            display: none;
-        }
-
-        .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .photo {
-            width: calc(40% - 20px);
-            margin-bottom: 20px;
-            margin-right: 20px;
-            overflow: hidden;
-            text-align: center;
-            position: relative;
-        }
-
-        .photo img {
-            width: 100%;
-            height: auto;
-            transition: opacity 0.3s ease;
-        }
-
-        .photo:hover img {
-            opacity: 0.7;
-        }
-
-        .title {
-            position: absolute;
-            background-color: #14152D;
-            width: 100%;
-            bottom: 0;
+.overlay {
+            position: fixed;
+            top: 0;
             left: 0;
-            padding: 10px;
-            box-sizing: border-box;
+            width: 100vh;
+            height: 100vh;
+            z-index: 1;
+        }
+
+.navbar-toggle {    
+        cursor: pointer;
+        display: none;
+        justify-content: center;
+    }
+
+.bar {
+        width: 25px;
+        height: 3px;
+        background-color:#14152D;
+        margin: 5px 0;
+    }
+
+.menu {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color:  #14152D;
+        list-style: none;
+        padding: 40px;     
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 21px;       
+        margin-top: 0%; 
+        width: 100%;
+        height: 75px;
+        object-fit: cover;   
+        z-index: 1;          
+       }
+       
+.menu li {
+        margin-right: 20px;
+}
+
+.menu li a {
+        text-decoration: none;
+        color: white;
+}
+
+.menu li:hover a {
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
+}
+
+
+@media screen and (max-width: 800px) {
+
+.navbar {  
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        background-color: transparent;
+        top: 100px;
+        left: 10%;
+        padding: 40px;  /*padding del simbolo de menu*/ 
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        
+    }
+
+.logo {
+        position: absolute;  
+        left: 50%;
+        width: 150px;
+        height: auto;
+        flex-shrink: 0;
+        background-color: transparent;     
+        margin-top: 10px;
+    }
+
+.navbar-toggle { 
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 2;
+}
+
+.menu {
+        display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
+        flex-direction: column;
+        background-color: rgba(20, 21, 45, 0.7);  
+        position: fixed;
+        top: 0px; /*margen de la esquina superior de la pantalla*/ 
+        left: 0px; /*margen izquierdo de la pantalla*/
+        width: 40%; /*fondo gris ancho*/
+        height: 100vh; /*fondo gris alto*/  
+        overflow-y:auto;
+        margin: 0;     
+}
+
+.menu li {
+        align-items: center;
+        color: white;
+        position: relative;
+        margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
+    }
+
+.menu li:hover a {
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
+}
+}
+
+.gallery {
+            display: flex;  
+            flex-wrap: wrap ;                 
+            justify-content: center;
+            margin-top: 5%;          
+  }
+
+.gallery a {
+        text-decoration: none; /* Elimina el subrayado de los enlaces dentro de la galería */
+        color: inherit; /* Utiliza el color de texto predeterminado para los enlaces */
+       }
+
+.photo{
+            width: calc(40% - 10px); /* Dos columnas con espacio entre ellas */
+            margin-bottom: 5%; /* Espacio entre las filas de imágenes */
+            margin-left: 5%;
+            margin-right: 5%; 
+            overflow: hidden;
+            text-align: center;    
+            position: relative; /* Asegura que .title se posicione correctamente con respecto a .photo */
+            transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
+        
+        }
+
+.photo img {           
+            width: 100%;
+            height: 600px;          
+            display: block;   
+            margin: 0 auto ;
+            overflow: hidden; /* Para recortar imágenes más grandes */   
+            object-fit: cover; /* Para mantener la relación de aspecto */  
+            transition: filter 0.3s ease, opacity 0.5s ease;
+            filter: grayscale(100%);        
+        }
+
+.photo:hover {
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3); /* Ajusta la sombra según tus preferencias */
+}
+.photo:hover img {         
+            opacity: 0.5;
+            filter: grayscale(0%);
+        }
+
+.title{
+            position: absolute;
+            background-color: #14152D; /* Cambia el color de fondo según tus preferencias */
+            width: 100%; /* Ancho completo dentro de .photo */
+            height: 60px;
+            bottom: 0px; /* Coloca .title en la parte inferior de .photo */
+            left:0; /* Alinea .title a la izquierda de .photo */
+            padding: 10px; /* Ajusta el relleno según tus preferencias */
+            box-sizing: border-box; 
             text-align: center;
+            object-position: center; 
         }
 
-        .title h2, .title p {
-            color: white;
-            margin: 5px 0;
+.title h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold; 
+    font-size: 21px; /* Tamaño del título */
+    color: white; /* Color del texto */
+    margin-top: -1%;
+    
+}
+
+.title p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px; /* Tamaño del título */
+    color: white; /* Color del texto */  
+    margin-top: -2% 
+}
+
+/* Estilos para tamaños de pantalla más pequeños */
+@media screen and (max-width: 768px) {
+
+
+.photo{
+            width: 100%; 
+            overflow: hidden;      
+            transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */  
         }
 
-        footer {
+
+.photo img {           
+            width: 100%;
+            height: 600px;          
+            display: block;   
+            overflow: hidden; /* Para recortar imágenes más grandes */   
+            object-fit: cover; /* Para mantener la relación de aspecto */  
+            transition: filter 0.3s ease, opacity 0.5s ease;
+            filter: grayscale(100%);        
+        } 
+         
+.title{
+    position: absolute;
+    background-color: #14152D; /* Cambia el color de fondo según tus preferencias */
+    width: 100%; /* Ancho completo dentro de .photo */
+    height: 80px;
+    bottom: 0px; /* Coloca .title en la parte inferior de .photo */
+    padding: 10px; /* Ajusta el relleno según tus preferencias */  
+}   
+
+}
+
+
+
+
+footer {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 16px;
+            color: #14152D;      
+            bottom: 0;          
+            width: 100%;
+            background-color: transparent;
             text-align: center;
-            padding: 20px;
-            background-color: #14152D;
-            color: white;
-            font-size: 14px;
+            padding-bottom: 20px;
         }
 
-        .social-icons {
+.social-footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            padding-bottom: 20px; /* Espacio adicional para los iconos sociales */
+}
+
+.social-icons {
             list-style: none;
             padding: 0;
-            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px; /* Se ajustó el margen superior */
         }
+.social-icons li {
+           margin: 0 5px; /* Se ajustó el espacio entre los iconos */
+}
 
-        .social-icons li {
-            display: inline-block;
-            margin: 0 10px;
-        }
+.social-footer-wrapper ul {
+            list-style: none;
+}
 
-        .social-icons li a {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-        }
+.social-footer-wrapper ul li {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 10px ;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    transition: all 0.5s ease;
+}
 
-        /* Media queries */
+.social-footer-wrapper ul li .fa { 
+    color: #14152D;
+    margin-top: 20px; 
+    transition: all 0.5 ease;
+}
 
-        @media screen and (max-width: 768px) {
-            .menu li {
-                display: block;
-                margin: 10px 0;
-            }
+.social-footer-wrapper ul li:hover .instagram { 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
 
-            .navbar-toggle {
-                display: block;
-            }
+}
 
-            .menu {
-                display: none;
-            }
+.social-footer-wrapper ul li:hover .fa-instagram{ 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+}
 
-            .photo {
-                width: calc(50% - 20px);
-            }
-        }
-    </style>
+.social-footer-wrapper ul li:hover .google { 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+
+}
+
+.social-footer-wrapper ul li:hover .fa-google{ 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+}
+
+
+.social-footer-wrapper ul li:hover .linkedin { 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+
+}
+
+.social-footer-wrapper ul li:hover .fa-linkedin{ 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+}
+
+
+.social-footer-wrapper ul li:hover .whatsapp { 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+
+}
+
+.social-footer-wrapper ul li:hover .fa-whatsapp{ 
+    border: 5px solid white;
+    box-shadow: 0 0 15px white;
+    transition: all 0.5s ease;
+}
+
+</style>
 </head>
-<body>
-    <a href="index.html">
-        <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
-    </a>
 
-    <nav class="navbar">
+<body>
+  
+  
+      <a href="index.html">   
+          <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
+      </a>
+
+      <nav class="navbar">
         <div class="navbar-toggle" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
+      
         </div>
         <ul class="menu">
-            <li><a href="/">Proyectos</a></li>
-            <li><a href="NuestraHistoria.html">Nuestra historia</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="/" onclick="closeMenu()">Proyectos</a></li>
+            <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
+            <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
         </ul>
+        
+        
     </nav>
 
-    <div class="gallery">
-        <div class="photo"> 
-            <a href="01 - Mini Pou\MiniPou.html">
-                <img src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Local ropa minipou">
-                <div class="title">
-                    <h2>Mini pou</h2>
-                    <p>CABA</p>
-                </div>
-            </a>
+
+<div class="center">
+<div class="gallery">
+  <div class="photo"> 
+    <a href="01 - Mini Pou\MiniPou.html">
+        <img  width="400"  src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Local ropa minipou">
+        <div class="title">
+            <h2> Mini pou</h2>
+            <p>CABA</p>
         </div>
-        <!-- Otras imágenes aquí -->
+    </a>
+  </div>
+
+      <div class="photo">
+        <a href="02 - Puro Escabio\PuroEscabio.html">
+        <img src="00 - Fotos principales/03 - Tapa Puro Escabio.jpg" alt="Puro escabio locales">
+        <span class="title">
+          <h2> Puro Escabio</h2>
+        </span>
+      </a>
+      
+      </div>
+      
+    <div class="photo">
+      <a href="03 - Flair Recepcion/RecepcionFlair.html"> 
+        <img src="00 - Fotos principales/04 - Tapa Recepcion Flair.png" alt="Recepcion Flair"> 
+        <span class="title">
+          <h2>Flair</h2>
+          <p>Buenos Aires</p>
+        </span>
+      </a>
     </div>
 
-    <footer>
-        <div class="social-icons">
-            <ul>
-                <li><a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng=="><i class="fa fa-instagram"></i></a></li>
-                <li><a href="mailto:ventas@lako.com.ar"><i class="fa fa-google"></i></a></li>
-                <li><a href="https://www.linkedin.com/mynetwork/?trk=eml-email_m2m_invite_single_01-invitation~card-0-accept~invite"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://wa.me/123456789"><i class="fa fa-whatsapp"></i></a></li>
-            </ul>
-        </div>
-        <p>2023 Lako diseño y arquitectura. Todos los derechos reservados.</p>
-    </footer>
+    <div class="photo">
+      <a href="04 - Cookie Brothers/CookieBrothers.html">
+      <img src="00 - Fotos principales/05 - Tapa Cookie Brothers.jpg" alt="Panaderia cookie brothers">  
+      <span class="title">
+        <h2>Cookie Brothers</h2>
+        <p>Buenos Aires</p>
+      </span>
+    </a>
+    </div>
+    
 
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector('.menu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-        }
-    </script>
+    <div class="photo">
+      <a href="05 - Stand en Shopping/StandEnShopping.html">
+        <img src="00 - Fotos principales/06 - Tapa Stand Seacret.png" alt="Stand en shopping">
+        <span class="title">
+            <h2>Stand Seacret</h2>
+            <p>Buenos Aires</p>
+        </span>
+      </a>
+    </div>
+
+    <div class="photo">
+      <a href="06 - Stand Impala/StandImpala.html">
+        <img src="00 - Fotos principales/07 - Tapa Stand Mundial Impala.png" alt="Stand">
+        <span class="title">
+            <h2>Stand Mundial Impala</h2>
+            <p>Buenos Aires</p>
+        </span>
+      </a>
+    </div>
+
+    <div class="photo">
+      <a href="07 - Flair Cordoba/FlairCordoba.html">
+      <img src="00 - Fotos principales/08 - Tapa Stand Flair.png" alt="Stand para expo alimentaria">
+      <span class="title">
+        <h2>Stand Flair</h2>
+        <p>Cordoba</p>
+      </span>
+    </a>
+    </div>
+
+    <div class="photo">
+      <a href="08 - Stand Mobil/StandMobil.html">
+      <img src="00 - Fotos principales/09 - Tapa Stand Mobil.png" alt="Stand en exposicion">
+      <span class="title">
+        <h2> Stand Mobil</h2>
+        <p>Neuquen</p>
+      </span>
+    </a>
+    </div>
+
+    <div class="photo">
+      <a href="09 - Expo Rural/ExpoRural.html"> 
+        <img src="00 - Fotos principales/10 - Tapa Stand Puro Escabio.png" alt="Stand en la Rural para expo">
+        <span class="title">
+          <h2>Stand Puro Escabio</h2>
+          <p>Buenos Aires</p>
+        </span>
+      </a>
+    </div>
+
+    <div class="photo">
+      <a href="10 - Farmacia Congreso/Farmacia.html">
+          <img src="00 - Fotos principales/11 - Tapa Farmacia Congreso.jpg" alt="Laboratorio en farmacia">
+          <span class="title">
+          <h2> Farmacia Congreso</h2> 
+          <p>Buenos Aires</p>
+      </span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="social-footer-wrapper">
+  <ul class="social-icons">
+      <li class="instagram"><a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng=="><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+      <li class="mail"><a href="mailto:ventas@lako.com.ar"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+      <li class="linkedin"><a href="https://www.linkedin.com/mynetwork/?trk=eml-email_m2m_invite_single_01-invitation~card-0-accept~invite"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+      <li class="whatsapp" id="whatsapp-icon">
+        <a href="https://wa.me/123456789"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+    </li>
+  </ul>
+  <footer>
+      <h3>2023 Lako diseño y arquitectura. Todos los derechos reservados.</h3>
+  </footer>
+</div>
+
+
+
+<script>
+  // Función para mostrar/ocultar el menú al hacer clic en el ícono de hamburguesa
+  function toggleMenu() {
+      var menu = document.querySelector('.menu');
+      menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+  }
+
+  // Función para cerrar el menú
+  function closeMenu() {
+      var menu = document.querySelector('.menu');
+      menu.style.display = 'none';
+  }
+
+  // Agregar un evento de clic al documento para cerrar el menú si se hace clic fuera de él
+  document.addEventListener('click', function (event) {
+      var menu = document.querySelector('.menu');
+      var navbarToggle = document.querySelector('.navbar-toggle');
+      
+      // Comprobar si se hizo clic en el ícono de hamburguesa para no cerrar el menú
+      if (navbarToggle.contains(event.target)) {
+          return;
+      }
+
+      // Comprobar si se hizo clic dentro del menú
+      if (!menu.contains(event.target) && menu.style.display === 'flex') {
+          menu.style.display = 'none';
+      }
+  });
+</script>
+
+<script>
+  document.getElementById('whatsapp-icon').addEventListener('click', function () {
+      // Reemplaza el número de teléfono con el tuyo
+      window.open('https://wa.me/5491132416414', '_blank');
+  });
+</script>
+
 </body>
 </html>
