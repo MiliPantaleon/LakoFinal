@@ -14,7 +14,9 @@ body {
             position: relative;
             height: 100vh;
             background-color: #f2f2f2;
+            overflow-x: hidden; /* Anula el scroll horizontal */        
         }
+
 
 .logo{
         position: absolute;
@@ -84,7 +86,7 @@ body {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
 
 .navbar {  
         display: flex;
@@ -156,7 +158,7 @@ body {
 
         .row {
             display: flex;
-            padding-top: 50px;
+            padding-top: 80px;
             padding-bottom: 50px;
             padding-left: 10px;
             padding-right: 10px;
@@ -166,6 +168,7 @@ body {
 
         .column {
           flex: 1 1 45%; /* Ajusta el ancho de las columnas */
+          padding-top:80px ;
           padding: 0 10px; /* Agrega un espacio interno horizontal alrededor de cada columna */
           margin: 0 5px 20px 5px; /* Añade un margen exterior para separar las columnas y las filas */
         }
@@ -333,6 +336,16 @@ footer {
     box-shadow: 0 0 15px white;
     transition: all 0.5s ease;
 }
+
+@media (max-width: 800px) {
+  footer {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 10px;
+            
+        }
+}
+
+
 
 </style>
 </head>
