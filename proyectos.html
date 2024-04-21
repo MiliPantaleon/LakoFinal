@@ -150,62 +150,77 @@ body {
         }
 
         img {
-            width: 100%;
+            width: 80%;
             height: auto;
         }
 
         .row {
             display: flex;
-            padding: 10px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
             flex-flow: row wrap;
+            justify-content: space-around;
         }
 
         .column {
-            flex: 1;
-            padding: 5px;
+          flex: 1 1 45%; /* Ajusta el ancho de las columnas */
+          padding: 0 10px; /* Agrega un espacio interno horizontal alrededor de cada columna */
+          margin: 0 5px 20px 5px; /* Añade un margen exterior para separar las columnas y las filas */
         }
 
         .column img {
             margin-top: 5px;
             align-items: center;
             justify-content: center;
+            padding: 5px;
             transition: transform 0.3s ease;
             object-fit: cover;
             width: 100%;
-            height: 300px; /* Altura fija para todas las imágenes */
+            height: 600px; /* Altura fija para todas las imágenes */
+            filter: grayscale(100%); /* Hace que las imágenes se vean en blanco y negro */
+
         }
 
-        .column img:hover {
+        .column .image-container {
+            position: relative;
+            overflow: hidden; /* Asegura que el texto no se desborde del contenedor */
+        }
+
+
+        .column .image-container:hover img {
             transform: scale(1.05);
+            filter: grayscale(0%); /* Al pasar el mouse, las imágenes recuperan su color original */
+
         }
 
-        .title {
-            background-color: #14152D;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 5px 5px;
+        .column .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            text-decoration: none;
+            background-color: rgba(20, 21, 45, 0.8); /* Fondo semi-transparente para el texto */
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease; /* Transición para el efecto de escala */
+            transform-origin: bottom left; /* Ajusta el origen de la transformación */
         }
 
-        .title h2 {
+
+        .column .title h2,
+        .column .title p {
+            margin: 0;
             font-family: 'Noto Sans', sans-serif;
             font-weight: bold;
-            font-size: 21px;
-            color: white;
-            margin-top: -1%;
-           
         }
 
-        .title p {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 17px;
-            color: white;
-            margin-top: -2%;
-            
+        .column .image-container img {
+            width: 100%;
+            transition: transform 0.3s ease; /* Transición para el efecto de escala */
         }
+
 
         @media (max-width: 800px) {
             .column {
@@ -345,6 +360,7 @@ footer {
 
 <div class="row">
   <div class="column">
+        <div class="image-container">
         <a href="01 - Mini Pou/MiniPou.html">
           <img src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Portada local comercial">
           <div class="title">
@@ -352,14 +368,19 @@ footer {
             <p>CABA</p>
           </div>
         </a> 
+      </div>
 
+      <div class="image-container">
         <a href="02 - Puro Escabio/PuroEscabio.html">
           <img src="00 - Fotos principales/03 - Tapa Puro Escabio.jpg" alt="Imagen interior">
           <div class="title">
             <h2>Puro Escabio</h2>
+            <p>‎ </p>
           </div>
         </a>
+      </div>
 
+      <div class="image-container">
         <a href="03 - Flair Recepcion/RecepcionFlair.html">
           <img src="00 - Fotos principales/04 - Tapa Recepcion Flair.png" alt="Recepcion de ofinas">
           <div class="title">
@@ -367,7 +388,9 @@ footer {
             <p>Buenos Aires</p>
           </div>
         </a>
+      </div>
 
+      <div class="image-container">
         <a href="04 - Cookie Brothers/CookieBrothers.html">
           <img src="00 - Fotos principales/05 - Tapa Cookie Brothers.jpg" alt="">
           <div class="title">
@@ -375,7 +398,9 @@ footer {
             <p>Buenos Aires</p>
           </div>
         </a>
+      </div>
 
+      <div class="image-container">
         <a href="05 - Stand en Shopping/StandEnShopping.html">
           <img src="00 - Fotos principales/06 - Tapa Stand Seacret.png" alt="Stand en centro comercial">
           <div class="title">
@@ -383,9 +408,12 @@ footer {
             <p>Buenos Aires </p>
           </div>
         </a>
+      </div>
+
   </div>
 
   <div class="column">
+    <div class="image-container">
     <a href="06 - Stand Impala/StandImpala.html">
       <img src="00 - Fotos principales/07 - Tapa Stand Mundial Impala.png" alt="Stand en exposicion">
       <div class="title">
@@ -393,7 +421,9 @@ footer {
         <p>Buenos Aires </p>
       </div>
     </a>
+    </div>
     
+    <div class="image-container">
     <a href="07 - Flair Cordoba/FlairCordoba.html">
       <img src="00 - Fotos principales/08 - Tapa Stand Flair.png" alt="Stand en exposicion">
       <div class="title">
@@ -401,6 +431,9 @@ footer {
         <p>Cordoba</p>
       </div>
     </a>
+  </div>
+
+  <div class="image-container">
     <a href="08 - Stand Mobil/StandMobil.html">
       <img src="00 - Fotos principales/09 - Tapa Stand Mobil.png" alt="Stand en exposicion">
       <div class="title">
@@ -408,6 +441,10 @@ footer {
         <p>Neuquen</p>
       </div>
     </a>
+  </div>
+
+
+  <div class="image-container">
     <a href="09 - Expo Rural/ExpoRural.html">
       <img src="00 - Fotos principales/10 - Tapa Stand Puro Escabio.png" alt="">
       <div class="title">
@@ -415,6 +452,9 @@ footer {
         <p>Buenos Aires</p>
       </div>
     </a>
+  </div>
+
+  <div class="image-container">
     <a href="10 - Farmacia Congreso/Farmacia.html">
       <img src="00 - Fotos principales/11 - Tapa Farmacia Congreso.jpg" alt="Farmacia Avenida Congreso">
       <div class="title">
@@ -422,9 +462,9 @@ footer {
         <p>Buenos Aires</p>
       </div>
     </a>
-
   </div>
 
+  </div>
 </div>
 
 <div class="social-footer-wrapper">
