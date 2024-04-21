@@ -146,14 +146,25 @@ body {
 }
 }
 
-.gallery {
+.container {
             display: flex;  
-            flex-wrap: wrap ;                 
+            flex-direction: column;
+            flex-wrap: wrap ;   
+            -webkit-flex-wrap: wrap;               
             justify-content: center;
-            margin-top: 5%;          
-  }
+            align-items: center;
+            gap: 10px;
+            gap: 10px 20px;
+            row-gap: 10px;
+            column-gap: 20px;
+}                      
 
-.gallery a {
+.container > * {
+  flex: 1 100%;
+}    
+
+
+.container a {
         text-decoration: none; /* Elimina el subrayado de los enlaces dentro de la galería */
         color: inherit; /* Utiliza el color de texto predeterminado para los enlaces */
        }
@@ -222,12 +233,18 @@ body {
 @media screen and (max-width: 768px) {
 
 
-.photo{
-            width: 100%;    
-          
+.container{
+            flex-direction:row;    
         }
 
-
+.photo{
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          text-align: center;    
+          transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
+        
+        }
 
 }
 
@@ -358,11 +375,11 @@ footer {
             <li><a href="/" onclick="closeMenu()">Proyectos</a></li>
             <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
             <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
-        </ul>
-        
-        
-    </nav>
-<div class="gallery">
+        </ul>       
+</nav>
+
+
+<div class="container">
   <div class="photo"> 
     <a href="01 - Mini Pou\MiniPou.html">
         <img  width="400"  src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Local ropa minipou">
