@@ -145,109 +145,74 @@ body {
     color: white;
 }
 }
-
-.container {
-            display: flex;  
-            flex-direction: column;
-            flex-wrap: wrap ;   
-            -webkit-flex-wrap: wrap;               
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            gap: 10px 20px;
-            row-gap: 10px;
-            column-gap: 20px;
-}                      
-
-.container > * {
-  flex: 1 100%;
-}    
-
-
-.container a {
-        text-decoration: none; /* Elimina el subrayado de los enlaces dentro de la galería */
-        color: inherit; /* Utiliza el color de texto predeterminado para los enlaces */
-       }
-
-.photo{
-            width: calc(40% - 10px); /* Dos columnas con espacio entre ellas */
-            margin-bottom: 5%; /* Espacio entre las filas de imágenes */
-            margin-left: 5%;
-            margin-right: 5%; 
-            overflow: hidden;
-            text-align: center;    
-            position: relative; /* Asegura que .title se posicione correctamente con respecto a .photo */
-            transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
-        
+* {
+            box-sizing: border-box;
         }
 
-.photo img {           
+        img {
             width: 100%;
-            height: 600px;          
-            display: block;   
-            margin: 0 auto ;
-            overflow: hidden; /* Para recortar imágenes más grandes */   
-            object-fit: cover; /* Para mantener la relación de aspecto */  
-            transition: filter 0.3s ease, opacity 0.5s ease;
-            filter: grayscale(100%);        
+            height: auto;
         }
 
-.photo:hover {
-    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3); /* Ajusta la sombra según tus preferencias */
-}
-.photo:hover img {         
-            opacity: 0.5;
-            filter: grayscale(0%);
+        .row {
+            display: flex;
+            padding: 10px;
+            flex-flow: row wrap;
         }
 
-.title{
-            position: absolute;
-            background-color: #14152D; /* Cambia el color de fondo según tus preferencias */
-            width: 100%; /* Ancho completo dentro de .photo */
-            height: 60px;
-            bottom: 0px; /* Coloca .title en la parte inferior de .photo */
-            left:0; /* Alinea .title a la izquierda de .photo */
-            padding: 10px; /* Ajusta el relleno según tus preferencias */
-            box-sizing: border-box; 
+        .column {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .column img {
+            margin-top: 5px;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            width: 100%;
+            height: 300px; /* Altura fija para todas las imágenes */
+        }
+
+        .column img:hover {
+            transform: scale(1.05);
+        }
+
+        .title {
+            background-color: #14152D;
+            color: white;
             text-align: center;
-            object-position: center; 
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+            width: 100%;
+            height: auto;
+            text-decoration: none;
         }
 
-.title h2 {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: bold; 
-    font-size: 21px; /* Tamaño del título */
-    color: white; /* Color del texto */
-    margin-top: -1%;
-    
-}
-
-.title p {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 17px; /* Tamaño del título */
-    color: white; /* Color del texto */  
-    margin-top: -2% 
-}
-
-/* Estilos para tamaños de pantalla más pequeños */
-@media screen and (max-width: 768px) {
-
-
-.container{
-            flex-direction:row;    
+        .title h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: bold;
+            font-size: 21px;
+            color: white;
+            margin-top: -1%;
+           
         }
 
-.photo{
-          width: 100%;
-          height: auto;
-          overflow: hidden;
-          text-align: center;    
-          transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
-        
+        .title p {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 17px;
+            color: white;
+            margin-top: -2%;
+            
         }
 
-}
-
+        @media (max-width: 800px) {
+            .column {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
 
 footer {
             font-family: 'Noto Sans', sans-serif;
@@ -378,109 +343,88 @@ footer {
         </ul>       
 </nav>
 
-
-<div class="container">
-  <div class="photo"> 
-    <a href="01 - Mini Pou\MiniPou.html">
-        <img  width="400"  src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Local ropa minipou">
-        <div class="title">
-            <h2> Mini pou</h2>
+<div class="row">
+  <div class="column">
+        <a href="01 - Mini Pou/MiniPou.html">
+          <img src="00 - Fotos principales/02 - Tapa Minipou.jpg" alt="Portada local comercial">
+          <div class="title">
+            <h2>Mini Pou</h2>
             <p>CABA</p>
-        </div>
-    </a>
+          </div>
+        </a> 
+
+        <a href="02 - Puro Escabio/PuroEscabio.html">
+          <img src="00 - Fotos principales/03 - Tapa Puro Escabio.jpg" alt="Imagen interior">
+          <div class="title">
+            <h2>Puro Escabio</h2>
+          </div>
+        </a>
+
+        <a href="03 - Flair Recepcion/RecepcionFlair.html">
+          <img src="00 - Fotos principales/04 - Tapa Recepcion Flair.png" alt="Recepcion de ofinas">
+          <div class="title">
+            <h2>Flair</h2>
+            <p>Buenos Aires</p>
+          </div>
+        </a>
+
+        <a href="04 - Cookie Brothers/CookieBrothers.html">
+          <img src="00 - Fotos principales/05 - Tapa Cookie Brothers.jpg" alt="">
+          <div class="title">
+            <h2>Cookie Brothers</h2>
+            <p>Buenos Aires</p>
+          </div>
+        </a>
+
+        <a href="05 - Stand en Shopping/StandEnShopping.html">
+          <img src="00 - Fotos principales/06 - Tapa Stand Seacret.png" alt="Stand en centro comercial">
+          <div class="title">
+            <h2>Stand Seacret</h2>
+            <p>Buenos Aires </p>
+          </div>
+        </a>
   </div>
 
-      <div class="photo">
-        <a href="02 - Puro Escabio\PuroEscabio.html">
-        <img src="00 - Fotos principales/03 - Tapa Puro Escabio.jpg" alt="Puro escabio locales">
-        <span class="title">
-          <h2> Puro Escabio</h2>
-        </span>
-      </a>
-      
+  <div class="column">
+    <a href="06 - Stand Impala/StandImpala.html">
+      <img src="00 - Fotos principales/07 - Tapa Stand Mundial Impala.png" alt="Stand en exposicion">
+      <div class="title">
+        <h2>Stand Mundial Impala</h2>
+        <p>Buenos Aires </p>
       </div>
-      
-    <div class="photo">
-      <a href="03 - Flair Recepcion/RecepcionFlair.html"> 
-        <img src="00 - Fotos principales/04 - Tapa Recepcion Flair.png" alt="Recepcion Flair"> 
-        <span class="title">
-          <h2>Flair</h2>
-          <p>Buenos Aires</p>
-        </span>
-      </a>
-    </div>
-
-    <div class="photo">
-      <a href="04 - Cookie Brothers/CookieBrothers.html">
-      <img src="00 - Fotos principales/05 - Tapa Cookie Brothers.jpg" alt="Panaderia cookie brothers">  
-      <span class="title">
-        <h2>Cookie Brothers</h2>
-        <p>Buenos Aires</p>
-      </span>
     </a>
-    </div>
     
-
-    <div class="photo">
-      <a href="05 - Stand en Shopping/StandEnShopping.html">
-        <img src="00 - Fotos principales/06 - Tapa Stand Seacret.png" alt="Stand en shopping">
-        <span class="title">
-            <h2>Stand Seacret</h2>
-            <p>Buenos Aires</p>
-        </span>
-      </a>
-    </div>
-
-    <div class="photo">
-      <a href="06 - Stand Impala/StandImpala.html">
-        <img src="00 - Fotos principales/07 - Tapa Stand Mundial Impala.png" alt="Stand">
-        <span class="title">
-            <h2>Stand Mundial Impala</h2>
-            <p>Buenos Aires</p>
-        </span>
-      </a>
-    </div>
-
-    <div class="photo">
-      <a href="07 - Flair Cordoba/FlairCordoba.html">
-      <img src="00 - Fotos principales/08 - Tapa Stand Flair.png" alt="Stand para expo alimentaria">
-      <span class="title">
+    <a href="07 - Flair Cordoba/FlairCordoba.html">
+      <img src="00 - Fotos principales/08 - Tapa Stand Flair.png" alt="Stand en exposicion">
+      <div class="title">
         <h2>Stand Flair</h2>
         <p>Cordoba</p>
-      </span>
+      </div>
     </a>
-    </div>
-
-    <div class="photo">
-      <a href="08 - Stand Mobil/StandMobil.html">
+    <a href="08 - Stand Mobil/StandMobil.html">
       <img src="00 - Fotos principales/09 - Tapa Stand Mobil.png" alt="Stand en exposicion">
-      <span class="title">
-        <h2> Stand Mobil</h2>
+      <div class="title">
+        <h2>Stand Mobil</h2>
         <p>Neuquen</p>
-      </span>
+      </div>
     </a>
-    </div>
+    <a href="09 - Expo Rural/ExpoRural.html">
+      <img src="00 - Fotos principales/10 - Tapa Stand Puro Escabio.png" alt="">
+      <div class="title">
+        <h2>Stand Puro Escabio</h2>
+        <p>Buenos Aires</p>
+      </div>
+    </a>
+    <a href="10 - Farmacia Congreso/Farmacia.html">
+      <img src="00 - Fotos principales/11 - Tapa Farmacia Congreso.jpg" alt="Farmacia Avenida Congreso">
+      <div class="title">
+        <h2>Farmacia Congreso</h2>
+        <p>Buenos Aires</p>
+      </div>
+    </a>
 
-    <div class="photo">
-      <a href="09 - Expo Rural/ExpoRural.html"> 
-        <img src="00 - Fotos principales/10 - Tapa Stand Puro Escabio.png" alt="Stand en la Rural para expo">
-        <span class="title">
-          <h2>Stand Puro Escabio</h2>
-          <p>Buenos Aires</p>
-        </span>
-      </a>
-    </div>
-
-    <div class="photo">
-      <a href="10 - Farmacia Congreso/Farmacia.html">
-          <img src="00 - Fotos principales/11 - Tapa Farmacia Congreso.jpg" alt="Laboratorio en farmacia">
-          <span class="title">
-          <h2> Farmacia Congreso</h2> 
-          <p>Buenos Aires</p>
-      </span>
-      </a>
-    </div>
   </div>
+
 </div>
 
 <div class="social-footer-wrapper">
