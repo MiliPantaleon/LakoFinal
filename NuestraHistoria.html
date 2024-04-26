@@ -12,40 +12,26 @@
 
 body {
             margin: 0;
-            position: relative;
             height: 100vh;
-            background-color: #f2f2f2;
-            overflow-x: hidden; /* Anula el scroll horizontal */        
+            background-color: #f2f2f2;   
         }
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    padding: 10px 10px; /* Ajusta el espaciado del header según sea necesario */
+    background-color: #14152D; /* Ajusta el color de fondo del header */
+}
 
-.logo{
-        position: absolute;
-        padding-top: 150px;
-        left: 10%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: 20%;
-        flex-shrink: 0;
-        background-color: transparent;
-       
-    }
-
-.overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vh;
-            height: 100vh;
-            z-index: 1;
-        }
-
-.navbar-toggle {    
-        cursor: pointer;
-        display: none;
-        justify-content: center;
-    }
-
+.logo { 
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    
+}
 .bar {
         width: 25px;
         height: 3px;
@@ -53,25 +39,30 @@ body {
         margin: 5px 0;
     }
 
-.menu {   
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color:  #14152D;
-        list-style: none;
-        padding: 40px;     
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 21px;       
-        margin-top: 0%; 
-        width: 100%;
-        height: 75px;
-        object-fit: cover;   
-        z-index: 1;          
-       }
-       
+.navbar-toggle {    
+    cursor: pointer;
+    display: none;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .menu li {
-        margin-right: 20px;
+    margin-right: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    color: white;
+    text-align: center; /* Alinea el texto al centro */
 }
 
 .menu li a {
@@ -89,36 +80,33 @@ body {
 
 @media screen and (max-width: 768px) {
 
-.navbar {  
-        display: flex;
-        justify-content: left;
-        align-items: left;
-        background-color: transparent;
-        top: 100px;
-        left: 10%;
-        padding: 40px;  /*padding del simbolo de menu*/ 
-        z-index: 1;
-        top: 0;
-        width: 100%;
-        
-    }
+  .header {
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 20px; /* Aju sta el espaciado del header en dispositivos móviles */
+  }
 
-.logo {
-        position: absolute;  
-        left: 50%;
-        width: 150px;
-        height: auto;
-        flex-shrink: 0;
-        background-color: transparent;     
-        margin-top: 10px;
-    }
+  .logo-container {
+    justify-content: center;
+    display: flex;
+    order: 2; 
+   
+  }
+  
+  .logo {
+    
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Mantiene la proporción */
+  }
 
-.navbar-toggle { 
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        order: 2;
+
+.navbar-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    order: 2;
 }
 
 .menu {
@@ -128,16 +116,14 @@ body {
         position: fixed;
         top: 0px; /*margen de la esquina superior de la pantalla*/ 
         left: 0px; /*margen izquierdo de la pantalla*/
-        width: 40%; /*fondo gris ancho*/
+        width: 50%; /*fondo gris ancho*/
         height: 100vh; /*fondo gris alto*/  
         overflow-y:auto;
         margin: 0;     
 }
-
 .menu li {
-        align-items: center;
         color: white;
-        position: relative;
+        font-size: 16px;
         margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
     }
 
@@ -147,7 +133,11 @@ body {
     /* O puedes cambiar el color del texto */
     color: white;
 }
+
 }
+* {
+            box-sizing: border-box;
+        }
 .center {
             display: flex;
             flex-direction: column;
@@ -213,15 +203,8 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .center {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        color: #14152D;
-        padding: 5%;
-    }
+   
+  
 
     .presentation {
         flex-direction: column;
@@ -238,23 +221,8 @@ body {
         height: auto; /* Permite que la altura se ajuste automáticamente */
     }
 
-    .column {
-        flex: 1;
-        padding: 20 20px; /* Ajusta el espacio entre columnas */
-        margin-left: 20px;
-        margin-right: 20px;
-        text-align: center;
-       
-    }
 
-
-    .column-img { 
-        display: flex; /* Hace que las imágenes estén una al lado de la otra */
-        margin: 10px; /* Ajusta el espacio entre las imágenes */
-        width: 50%; /* Haz que la imagen ocupe el 100% del ancho del contenedor */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
-        padding: 5px; /* Ajusta el espacio entre la imagen y el borde */
-    }
+    
 
 
     .center h2 {
@@ -264,11 +232,14 @@ body {
         font-style: bold;
         margin-bottom: 20px; /* Ajusta el espacio inferior del encabezado */
     }
+    .column p { 
+        width: 350px;
+    }
 
     .column-close p {
-            width: 467px; 
+            width: 350px; 
             font-family: 'Noto Sans', sans-serif;
-            font-size: 21px;  
+            font-size: 16px;  
             font-style: italic;      
             text-align: left;        
             margin-top: 25%;        
@@ -385,25 +356,28 @@ footer {
 </head>
 <body>
 
-    <a href="index.html">   
-        <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
-    </a>
-
+  
+<header class="header">
+    <div class="logo-container"> <!-- Agrega un contenedor para el logo -->
+        <a href="index.html"> <!-- Mantén el enlace existente -->
+            <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
+        </a>
+    </div>
     <nav class="navbar">
-      <div class="navbar-toggle" onclick="toggleMenu()">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-    
-      </div>
-      <ul class="menu">
-          <li><a href="proyectos.html" onclick="closeMenu()">Proyectos</a></li>
-          <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
-          <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
-      </ul>
-      
-      
-  </nav>
+        <div class="navbar-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+            <ul class="menu">
+                <li><a href="/" onclick="closeMenu()">Proyectos</a></li>
+                <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+        
+    </nav>
+</header>
 
 
 <div class="center">
