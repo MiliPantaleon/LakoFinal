@@ -9,53 +9,31 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
 
+
+
 body {
             margin: 0;
-            position: relative;
             height: 100vh;
-            background-color: #f2f2f2;
-            overflow-x: hidden; /* Anula el scroll horizontal */        
+            background-color: #f2f2f2;   
+            overflow-y: hidden;
         }
 
-@media screen and (min-width: 769px) {
-    body {
-        overflow: hidden;
-    }
-    }
-        * {
-    margin: 0;
-    padding: 0;
-  
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    padding: 10px 10px; /* Ajusta el espaciado del header según sea necesario */
+    background-color: #14152D; /* Ajusta el color de fondo del header */
 }
 
-
-.logo{
-        position: absolute;
-        padding-top: 150px;
-        left: 10%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: 20%;
-        flex-shrink: 0;
-        background-color: transparent;
-       
-    }
-
-.overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vh;
-            height: 100vh;
-            z-index: 1;
-        }
-
-.navbar-toggle {    
-        cursor: pointer;
-        display: none;
-        justify-content: center;
-    }
-
+.logo { 
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    
+}
 .bar {
         width: 25px;
         height: 3px;
@@ -63,25 +41,30 @@ body {
         margin: 5px 0;
     }
 
-.menu {   
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color:  #14152D;
-        list-style: none;
-        padding: 40px;     
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 21px;       
-        margin-top: 0%; 
-        width: 100%;
-        height: 75px;
-        object-fit: cover;   
-        z-index: 1;          
-       }
-       
+.navbar-toggle {    
+    cursor: pointer;
+    display: none;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .menu li {
-        margin-right: 20px;
+    margin-right: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    color: white;
+    text-align: center; /* Alinea el texto al centro */
 }
 
 .menu li a {
@@ -99,36 +82,31 @@ body {
 
 @media screen and (max-width: 768px) {
 
-.navbar {  
-        display: flex;
-        justify-content: left;
-        align-items: left;
-        background-color: transparent;
-        top: 100px;
-        left: 10%;
-        padding: 40px;  /*padding del simbolo de menu*/ 
-        z-index: 1;
-        top: 0;
-        width: 100%;
-        
-    }
+  .header {
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 20px; /* Aju sta el espaciado del header en dispositivos móviles */
+  }
 
-.logo {
-        position: absolute;  
-        left: 50%;
-        width: 150px;
-        height: auto;
-        flex-shrink: 0;
-        background-color: transparent;     
-        margin-top: 10px;
-    }
+  .logo-container {
+    justify-content: center;
+    display: flex;
+    order: 2; 
+  }
+  
+  .logo {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Mantiene la proporción */
+  }
 
-.navbar-toggle { 
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        order: 2;
+
+.navbar-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    order: 2;
 }
 
 .menu {
@@ -138,16 +116,14 @@ body {
         position: fixed;
         top: 0px; /*margen de la esquina superior de la pantalla*/ 
         left: 0px; /*margen izquierdo de la pantalla*/
-        width: 40%; /*fondo gris ancho*/
+        width: 50%; /*fondo gris ancho*/
         height: 100vh; /*fondo gris alto*/  
         overflow-y:auto;
         margin: 0;     
 }
-
 .menu li {
-        align-items: center;
         color: white;
-        position: relative;
+        font-size: 16px;
         margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
     }
 
@@ -157,100 +133,186 @@ body {
     /* O puedes cambiar el color del texto */
     color: white;
 }
+
 }
 
-.text-along-logo {
-    position: absolute;
-    color: #14152D;
-    font-size: 28px;
-    text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;      
-    top:50%; /* Posiciona el formulario en el centro vertical de la pantalla */
-    left: 10%; /* Posiciona el formulario en el centro horizontal de la pantalla */
-    transform: translate(-10%, -50%); /* Centra el formulario exactamente */
-    z-index: 999; /* Asegura que esté por encima de otros elementos */
-}
-
-.contact-form {
-    width: 300px; /* Ancho del formulario */
-    background-color: #3C3E88;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top:50%; /* Posiciona el formulario en el centro vertical de la pantalla */
-    left: 50%; /* Posiciona el formulario en el centro horizontal de la pantalla */
-    transform: translate(-50%, -50%); /* Centra el formulario exactamente */
-    z-index: 999; /* Asegura que esté por encima de otros elementos */
-}
-
-.contact-form label {
-            margin-bottom: 0.5rem;
-            font-size: 16px; 
-            font-family: 'Noto Sans', sans-serif;     
-            color: white;  
-            
-        }
-
-.contact-form input, .contact-form select, .contact-form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            box-sizing: border-box;      
-            font-family: Arial, Helvetica, sans-serif; 
-            color:black;
-            border-radius: 10px;
-        }
-
-.contact-form input[type="enviar"] {
-            background-color: #14152D;
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 21px;
-            color: white;
-            cursor: pointer;
-            border-radius: 10px;
-        
-        }
-
-.contact-form input[type="enviar"]:hover {
-            background-color:#3C3E88;
+        * {
+           
+            box-sizing: border-box;
         }
 
 
-@media screen and (max-width: 768px) {
-    body {
-        height: 100vh;
-    }
-    .text-along-logo {
-            position: absolute;
-            color: #14152D;
-            font-size: 21px;
-            text-decoration: none;
-            font-family: 'Noto Sans', sans-serif;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .main-section {
+            position: relative;
+            z-index: 3;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .main-container {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .main-section-header {
+            margin-bottom: 30px;
             text-align: center;
-            white-space: nowrap;
-            z-index: -1;
-     
         }
 
-    .contact-form {
-        width: 80%; /* Ancho del formulario ajustado para dispositivos móviles */
-        background-color: #3C3E88;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        top: 70%; /* Ajustado para centrar el formulario en dispositivos móviles */
-        left: 50%;
-        transform: translate(-50%, -50%);   
-        z-index: -2;
-    }
-}
+        .main-section-header h2 {
+            color:#28295B;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 37px;
+
+        }
+
+        .main-section-header p {
+            color:#28295B;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 28px;
+        }
+
+        .main-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-info-section {
+            width: 50%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .contact-info-icon {
+            height: 70px;
+            width: 70px;
+            text-align: center;
+           
+        }
+
+  
+        .contact-info-content {
+            margin-left: 20px;
+        }
+
+        .contact-info-content h4 {
+            color:#28295B;
+            font-size: 21px;
+            font-family: 'Noto Sans', sans-serif;
+            margin-bottom: 5px;
+        }
+
+        .contact-info-content p {
+            color:#28295B;
+            font-size: 21px;
+            font-family: 'Noto Sans', sans-serif;
+            margin-bottom: 5px;
+
+        }
+
+        .contact-form-section {
+            background-color: #fff;
+            padding: 40px;
+            width: 45%;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .contact-form-section h2 {
+            
+            font-size: 2em;
+            font-family: 'Noto Sans', sans-serif;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .input-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .input-container input,
+        .input-container textarea {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+
+        .input-container span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 12px;
+            font-family: 'Noto Sans', sans-serif;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+
+        .input-container input:focus~span,
+        .input-container textarea:focus~span {
+            color: #6467e3;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+
+        .input-container input[type="submit"] {
+            width: 100%;
+            background: #5551ff;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+            font-family: 'Noto Sans', sans-serif;
+            transition: 0.5s;
+        }
+
+        .input-container input[type="submit"]:hover {
+            background: #FFF;
+            color: #5551ff;
+        }
+
+        @media (max-width: 991px) {
+            .main-section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .main-row {
+                flex-direction: column;
+            }
+
+            .contact-info-section {
+                margin-bottom: 40px;
+                width: 100%;
+            }
+
+            .contact-form-section {
+                width: 100%;
+            }
+        }
+
+
+
 footer {
         font-family: 'Noto Sans', sans-serif;
         font-size: 16px;
@@ -343,49 +405,89 @@ footer {
 </head>
 <body>
 
-<a href="index.html">   
-    <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
-</a>
-
-<nav class="navbar">
-    <div class="navbar-toggle" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-
-    </div>
-    <ul class="menu">
-        <li><a href="proyectos.html" onclick="closeMenu()">Proyectos</a></li>
-        <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
-        <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
-    </ul>
-    
-    
-</nav>
-
-
-<div class="text-along-logo">
-    <h2>¿Estás planeando <br>un nuevo proyecto?</h2>
-    <p>Completa el formulario</p>
+    <header class="header">
+        <div class="logo-container"> <!-- Agrega un contenedor para el logo -->
+            <a href="index.html"> <!-- Mantén el enlace existente -->
+                <img src="00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
+            </a>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+           
+                <ul class="menu">
+                    <li><a href="/" onclick="closeMenu()">Proyectos</a></li>
+                    <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
+                    <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+                </ul>
+          
+        </nav>
+    </header>
    
-</div>
 
 
-<form class="contact-form" action="enviar_formulario.php" method="post">
-    <label for="full-name">Nombre</label>
-    <input type="text" id="full-name" name="full-name" required>
+    <div class="main-section">
+        <div class="main-section-header">
+            <div class="main-container">
+                <h2>Estas planeando un nuevo proyecto?</h2>
+                <p>Completa el formulario.</p>
+            </div>
+        </div>
 
-    <label for="email">Mail</label>
-    <input type="email" id="email" name="email" required>
+        <div class="main-container">
+            <div class="main-row">
 
-    <label for="phone">Telefono</label>
-    <input type="tel" id="phone" name="phone" required>
+                <div class="contact-info-section">
+                    <div class="contact-info-item">
+                   
 
-    <label for="message">Consulta</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+                        <div class="contact-info-content">
+                            <h4>Telefono</h4>
+                            <p>11 3241 6414</p>
+                        </div>
+                    </div>
 
-    <input type="enviar" value="Enviar">
-</form>
+                    <div class="contact-info-item">
+                     
+
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p>ventas@lako.com.ar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form action="enviar_formulario.php" id="contact-form">
+                        <h2>Enviar</h2>
+                        <div class="input-container">
+                            <input type="text" required="true" name="">
+                            <span>Nombre y apellido</span>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="email" required="true" name="">
+                            <span>Email</span>
+                        </div>
+
+                        <div class="input-container">
+                            <textarea required="true" name=""></textarea>
+                            <span>Contanos tu consulta...</span>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="submit" value="Send" name="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 <div class="social-footer-wrapper">
     <ul class="social-icons">
