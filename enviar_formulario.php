@@ -8,7 +8,7 @@
         $date = htmlspecialchars($_POST["date"]);
         $message = htmlspecialchars($_POST["message"]);
 
-        $to = "ventas@lako.com.ar";
+        $to = "disenolako@gmail.com";
         $subject = "Nuevo contacto de la página web";
         $headers = "From: $email" . "\r\n" .
                    "Reply-To: $email" . "\r\n" .
