@@ -11,14 +11,12 @@
 <style>
 
 body {
-            margin: 0;
-            position: relative;
+            margin: 0;     
             height: 100vh;
-            background-color: #14152D;
             overflow: hidden;
             
         }
-        
+   
 video {
             position: fixed;
             width: 100vh;
@@ -31,56 +29,54 @@ video {
             z-index: -1;
         }
 
-.overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vh;
-            height: 100vh;
-            background: rgba(240, 237, 237, 0.178);
-            z-index: 1;
-        }
 
-  * {
-    margin: 0;
-    padding: 0;
-  
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    padding: 10px 10px; /* Ajusta el espaciado del header según sea necesario */
 }
 
-.navbar-toggle {    
-        cursor: pointer;
-        display: none;
-        justify-content: center;
-    }
-
+.logo { 
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    
+}
 .bar {
         width: 25px;
         height: 3px;
-        background-color: white;
+        background-color:#14152D;
         margin: 5px 0;
     }
 
-.menu {   
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: flex;   
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: transparent;
-        color: white;
-        list-style: none;
-        padding: 70px;     
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 21px; 
-        z-index: 1;  
+.navbar-toggle {    
+    cursor: pointer;
+    display: none;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .menu li {
-        margin-right: 20px;
+    margin-right: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    color: white;
+    text-align: center; /* Alinea el texto al centro */
 }
-
 
 .menu li a {
         text-decoration: none;
@@ -98,68 +94,69 @@ video {
 @media screen and (max-width: 768px) {
 
 
-.navbar {  
-        display: flex;
-        justify-content: left;
-        align-items: left;
-        background-color: transparent;
-        top: 100px;
-        left: 10%;
-        padding: 40px;  /*padding del simbolo de menu*/ 
-        z-index: 1;
-        top: 0;
-        width: 100%;
-    }
+  .header {
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 20px; /* Aju sta el espaciado del header en dispositivos móviles */
+  }
 
-.navbar-toggle { 
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      order: 2;
-}
-
-.menu {
-      display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
-      flex-direction: column;
-      background-color: rgba(169, 169, 169, 0.7); 
-      position: fixed;
-      top: 0px; /*margen de la esquina superior de la pantalla*/ 
-      left: 0px; /*margen izquierdo de la pantalla*/
-      width:40%; /*fondo gris ancho*/
-      height: 100vh; /*fondo gris alto*/  
-      overflow-y:auto;
-      margin: 0;     
-    
-}
- 
-.menu li {
-      align-items: center;
-      color: white;
-      position: relative;
-      margin-top:20%; /* Ajustado para mover el texto hacia la parte superior */
+  .logo-container {
+    justify-content: center;
+    display: flex;
+    order: 2; 
+  }
+  
+  .logo {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Mantiene la proporción */
   }
 
 
+.navbar-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.menu {
+        display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
+        flex-direction: column;
+        background-color: rgba(20, 21, 45, 0.7);  
+        position: fixed;
+        top: 0px; /*margen de la esquina superior de la pantalla*/ 
+        left: 0px; /*margen izquierdo de la pantalla*/
+        width: 50%; /*fondo gris ancho*/
+        height: 100vh; /*fondo gris alto*/  
+        overflow-y:auto;
+        margin: 0;     
+}
+.menu li {
+        color: white;
+        font-size: 16px;
+        margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
+    }
+
 .menu li:hover a {
-  font-weight: bold;
-  border-bottom: 5px solid white; /* Otra forma de subrayar */
-  /* O puedes cambiar el color del texto */
-  color: white;
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
 }
 
 }
+
 
 footer {
         font-family: 'Noto Sans', sans-serif;
         font-size: 16px;
-        color: white;
-        position: fixed;
+        color: #14152D;
         bottom: 0;
         width: 100%;
         background-color: transparent;
         text-align: center;
-        padding: 20px;
 
         }
 
@@ -173,9 +170,9 @@ footer {
 
 .social-icons {
         list-style: none;
-        padding-bottom: 300px;
+        padding: 0;
         display: flex;
-        margin-top: 35%;
+     
         }
 
         .social-icons li {
@@ -198,7 +195,7 @@ footer {
         }
 
         .social-footer-wrapper ul li .fa { 
-            color: white;
+            color: #14152D;
             margin-top: 20px; 
             transition: all 0.5 ease;
         }
@@ -218,14 +215,11 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-    @media screen and (max-width: 768px) {
-
+ 
     .social-footer-wrapper {
         position: relative;
-        margin-top: 20px; /* Ajusta la separación entre el formulario y los iconos de redes sociales */
         display: flex;
         flex-direction: column;
-        margin-top: 120%;
         align-items: center;
         justify-content: center;
     }
@@ -236,7 +230,7 @@ footer {
     }
 
 }
-}
+   
               
 </style>
 </head>
@@ -250,21 +244,25 @@ footer {
     </video>
 
    
-    <nav class="navbar">
-        <div class="navbar-toggle" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-      
+    <header class="header">
+    
         </div>
-        <ul class="menu">
-            <li><a href="proyectos.html" onclick="closeMenu()">Proyectos</a></li>
-            <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
-            <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
-        </ul>
-        
-        
-    </nav>
+        <nav class="navbar">
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+           
+                <ul class="menu">
+                    <li><a href="/" onclick="closeMenu()">Proyectos</a></li>
+                    <li><a href="NuestraHistoria.html" onclick="closeMenu()">Nuestra historia</a></li>
+                    <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+                </ul>
+          
+        </nav>
+    </header>
+   
 
 
     <div class="social-footer-wrapper">
