@@ -12,65 +12,62 @@
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js" integrity="sha384-kk++2ye5c7TxgZ8vZ4fbU+Gd9UHVCmsXb3L6ToxaNTZqnxXkytT7Yh8/2TwAtJ+VQ" crossorigin="anonymous"></script>
-
-
     <style>
-        body {
+
+body {
             margin: 0;
-            position: relative;
             height: 100vh;
-            background-color: #f2f2f2;
-            overflow-x: hidden; /* Anula el scroll horizontal */        
+            background-color: #f2f2f2;   
         }
 
-        .logo{
-        position: absolute;
-        padding-top: 150px;
-        left: 10%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: 20%;
-        flex-shrink: 0;
-        background-color: transparent;
-       
-    }
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    padding: 10px 10px; /* Ajusta el espaciado del header según sea necesario */
+    background-color: #14152D; /* Ajusta el color de fondo del header */
+}
 
-        .navbar-toggle {    
-        cursor: pointer;
-        display: none;
-        justify-content: center;
-    }
-
-
-    .bar {
+.logo { 
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    
+}
+.bar {
         width: 25px;
         height: 3px;
         background-color:#14152D;
         margin: 5px 0;
     }
 
-.menu {   
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color:  #14152D;
-        list-style: none;
-        padding: 40px;     
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 21px;       
-        margin-top: 0%; 
-        width: 100%;
-        height: 75px;
-        object-fit: cover;   
-        z-index: 1;          
-       }
+.navbar-toggle {    
+    cursor: pointer;
+    display: none;
     
-
-.menu li {
-        margin-right: 20px;
 }
 
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.menu li {
+    margin-right: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    color: white;
+    text-align: center; /* Alinea el texto al centro */
+}
 
 .menu li a {
         text-decoration: none;
@@ -84,68 +81,66 @@
     color: white;
 }
 
-   
+* {
+            box-sizing: border-box;
+        }
+
 @media screen and (max-width: 768px) {
 
-            .navbar {  
-                    display: flex;
-                    justify-content: left;
-                    align-items: left;
-                    background-color: transparent;
-                    top: 100px;
-                    left: 10%;
-                    padding: 40px;  /*padding del simbolo de menu*/ 
-                    z-index: 1;
-                    top: 0;
-                    width: 100%;
-                    
-                }
+  .header {
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 20px; /* Aju sta el espaciado del header en dispositivos móviles */
+  }
 
-            .logo {
-                    position: absolute;  
-                    left: 50%;
-                    width: 150px;
-                    height: auto;
-                    flex-shrink: 0;
-                    background-color: transparent;     
-                    margin-top: 10px;
-                }
+  .logo-container {
+    justify-content: center;
+    display: flex;
+    order: 2; 
+  }
+  
+  .logo {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Mantiene la proporción */
+  }
 
-            .navbar-toggle { 
-                    cursor: pointer;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    order: 2;
-            }
 
-            .menu {
-                    display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
-                    flex-direction: column;
-                    background-color: rgba(20, 21, 45, 0.7);  
-                    position: fixed;
-                    top: 0px; /*margen de la esquina superior de la pantalla*/ 
-                    left: 0px; /*margen izquierdo de la pantalla*/
-                    width: 40%; /*fondo gris ancho*/
-                    height: 100vh; /*fondo gris alto*/  
-                    overflow-y:auto;
-                    margin: 0;     
-            }
-
-            .menu li {
-                    align-items: center;
-                    color: white;
-                    position: relative;
-                    margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
-                }
-
-            .menu li:hover a {
-                font-weight: bold;
-                border-bottom: 5px solid white; /* Otra forma de subrayar */
-                /* O puedes cambiar el color del texto */
-                color: white;
-            }
+.navbar-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    order: 2;
 }
+
+.menu {
+        display: none; /* Ocultar el menú en pantallas más pequeñas por defecto */
+        flex-direction: column;
+        background-color: rgba(20, 21, 45, 0.7);  
+        position: fixed;
+        top: 0px; /*margen de la esquina superior de la pantalla*/ 
+        left: 0px; /*margen izquierdo de la pantalla*/
+        width: 50%; /*fondo gris ancho*/
+        height: 100vh; /*fondo gris alto*/  
+        overflow-y:auto;
+        margin: 0;     
+}
+.menu li {
+        color: white;
+        font-size: 16px;
+        margin-top: 10%; /* Ajustado para mover el texto hacia la parte superior */
+    }
+
+.menu li:hover a {
+    font-weight: bold;
+    border-bottom: 5px solid white; /* Otra forma de subrayar */
+    /* O puedes cambiar el color del texto */
+    color: white;
+}
+
+}
+
 .text-along-logo {
             text-align: left;
             position: absolute;
@@ -417,26 +412,31 @@ footer {
 
 <body>
 
-    <a href="../index.html">
-        <img src="../00 - Fotos principales/01 - Logo Indice.png"
-            alt="Logo de la empresa" class="logo">
-    </a>
 
-    <nav class="navbar">
-        <div class="navbar-toggle" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+<header class="header">
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../00 - Fotos principales/01 - Logo Indice.png" alt="Logo de la empresa" class="logo">
+            </a>
         </div>
-        <ul class="menu">
-            <li class="current"><a href="../proyectos.html"
-                    onclick="closeMenu()">Proyectos</a></li>
-            <li><a href="../NuestraHistoria.html"
-                    onclick="closeMenu()">Nuestra historia</a></li>
-            <li><a href="../contacto.html" onclick="closeMenu()">Contacto</a>
-            </li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li class="current"><a href="../proyectos.html"
+                        onclick="closeMenu()">Proyectos</a></li>
+                <li><a href="../NuestraHistoria.html"
+                        onclick="closeMenu()">Nuestra historia</a></li>
+                <li><a href="../contacto.html" onclick="closeMenu()">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+</header> 
+
+
 
     <div class="text-along-logo">
         <div>
