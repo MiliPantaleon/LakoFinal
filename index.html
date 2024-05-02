@@ -39,12 +39,7 @@ video {
     padding: 10px 10px; /* Ajusta el espaciado del header según sea necesario */
 }
 
-.logo { 
-    width: 200px;
-    height: auto;
-    justify-content: flex-start;
-    
-}
+
 .bar {
         width: 25px;
         height: 3px;
@@ -102,16 +97,6 @@ video {
     padding-top: 20px; /* Aju sta el espaciado del header en dispositivos móviles */
   }
 
-  .logo-container {
-    justify-content: center;
-    display: flex;
-    order: 2; 
-  }
-  
-  .logo {
-    width: 100px; /* Ancho del logo */
-    height: auto; /* Mantiene la proporción */
-  }
 
 
 .navbar-toggle {
@@ -149,70 +134,104 @@ video {
 }
 
 
-footer {
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 16px;
+.main-footer {
+      padding: 70px 0;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: transparent;
+      font-family: 'Noto Sans', sans-serif;
+
+    }
+    .main-footer ul {
+      list-style: none;
+    }
+    .main-footer h1 {
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 117%;
+      color:  #14152D;
+      margin-bottom: 10px;
+
+
+    }
+    .main-footer h2 {
+      color:  #14152D;
+      font-size: 16px;
+
+    }
+    .main-footer ul li a {
         color: #14152D;
-        bottom: 0;
-        width: 100%;
-        background-color: transparent;
+      text-decoration: none;
+    }
+
+    footer {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 21px;
+        padding-top: 200px;
+        padding: 1  5px 5px;
+        color: #14152D;
         text-align: center;
+    }
+    footer a {
+      text-decoration: none;
+      color: #2f2b53;
+    }
+    .logoinfo p {
+      color:  #14152D;
+      font-size: 17px;
+      margin-top: 5px;
+    }
+    .contact-details {
+      margin-top: 20px;
+    }
+    .contact-details li {
+      list-style: none;
+      margin: 10px 0;
+    }
+    .contact-details li a {
+      text-decoration: none;
+      color:  #14152D;
+    }
+    .contact-details .fa {
+      color: #14152D;   
+      margin-right: 10px;
+      font-size: 17px;
 
-        }
-
-.social-footer-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-
-
-.social-icons {
-        list-style: none;
-        padding: 0;
-        display: flex;
+    }
+    .sociallogos {
+      padding: 20px 0;
+    }
+    .sociallogos .logobox a {
+      padding: 0 10px;
+      text-decoration: none;
+      color:  #14152D;
      
-        }
-
-        .social-icons li {
-            margin: 0 10px;
-        }
-
-        .social-footer-wrapper ul {
-            list-style: none;
-        }
-
-        .social-footer-wrapper ul li {
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            margin: 0 10px ;
-            text-align: center;
-            cursor: pointer;
-            float: left;
-            transition: all 0.5s ease;
-        }
-
-        .social-footer-wrapper ul li .fa { 
-            color: #14152D;
-            margin-top: 20px; 
-            transition: all 0.5 ease;
-        }
-
-        .social-footer-wrapper ul li:hover .instagram, 
-        .social-footer-wrapper ul li:hover .fa-instagram, 
-        .social-footer-wrapper ul li:hover .google, 
-        .social-footer-wrapper ul li:hover .fa-google, 
-        .social-footer-wrapper ul li:hover .linkedin, 
-        .social-footer-wrapper ul li:hover .fa-linkedin, 
-        .social-footer-wrapper ul li:hover .whatsapp, 
-        .social-footer-wrapper ul li:hover .fa-whatsapp { 
-            border: 5px solid white;
-            box-shadow: 0 0 15px white;
-            transition: all 0.5s ease;
-        }
-
+    }
+    .com ul li {
+      padding: 5px 0;
+    }
+    
+    @media only screen and (max-width: 749px) {
+      .main-footer {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .info {
+        padding: 20px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .main-footer {
+        grid-template-columns: 1fr;
+      }
+      .sociallogos {
+        padding: 20px 0;
+      }
+      .com {
+        padding: 20px 0;
+      }
+    }
 
 @media screen and (max-width: 768px) {
  
@@ -265,19 +284,43 @@ footer {
    
 
 
-    <div class="social-footer-wrapper">
-        <ul class="social-icons">
-            <li class="instagram"><a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng=="><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-            <li class="mail"><a href="mailto:ventas@lako.com.ar"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/mynetwork/?trk=eml-email_m2m_invite_single_01-invitation~card-0-accept~invite"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
-            <li class="whatsapp" id="whatsapp-icon">
+    <section id="footer">
+        <div class="main-footer">
+          <div class="logoinfo" data-aos="fade-up">
+            <div class="contact-details">
+              <h1>Contacto</h1>
+              <li>
+                <a href="tel:+91">+549 11 3241-6414</a>
+              </li>
+              <li>
+                <a href="mailto:estudio@lako.com.ar">estudio@lako.com.ar</a>
+              </li>
+              </li>
+            </div>
+          </div>
+          <div class="com " data-aos="fade-up">
+            <h1>Sitio Web</h1>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="proyectos.html">Proyectos</a></li>
+              <li><a href="NuestraHistoria.html">Nuestra Historia</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="info" data-aos="fade-up">
+            <h1>Nuestras redes</h1>
+            <div class="sociallogos">
+              <div class="logobox">
+                <i></i>
+                <a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng==" class="fa fa-instagram fa-2x" aria-hidden="true"></a>
+                <a href="https://www.linkedin.com/company/lako-proyectos/" class="fa fa-linkedin fa-2x" aria-hidden="true"></a>
                 <a href="https://wa.me/123456789"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
-            </li>
-        </ul>
-        <footer>
-            <h3>2023 Lako diseño y arquitectura. Todos los derechos reservados.</h3>
-        </footer>
-    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
+      </section>
     
 
     <script>
