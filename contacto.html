@@ -15,6 +15,7 @@ body {
             margin: 0;
             height: 100vh;
             background-color: #f2f2f2;   
+           
           
         }
 
@@ -82,7 +83,6 @@ body {
 
 @media screen and (max-width: 768px) {
 
-
   .header {
     justify-content: space-between;
     background-color: transparent;
@@ -138,30 +138,26 @@ body {
 }
 
         * {
-           
             box-sizing: border-box;
         }
 
-
         .main-section {
-            position: relative;
-            z-index: 3;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .main-container {
-            max-width: 1080px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .main-section-header {
-            margin-bottom: 30px;
-            text-align: center;
-        }
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente */
+            text-align: center; /* Centra el texto */
+            width: 100%; /* Ajusta el ancho al 100% */
+          
+}
 
         .main-section-header h2 {
             color:#28295B;
@@ -169,7 +165,6 @@ body {
             margin-bottom: 10px;
             font-family: 'Noto Sans', sans-serif;
             font-size: 37px;
-
         }
 
         .main-section-header p {
@@ -182,14 +177,18 @@ body {
         .main-row {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
+          
         }
 
-        .contact-info-section {
-            width: 50%;
-        }
+        .contact-form-section {
+            background-color: #fff;
+            padding: 40px;
+            width: 100%; /* Ajusta el ancho al 100% */
+            min-width: 600px; /* Establece un ancho máximo para evitar que el formulario se expanda demasiado */
+            margin-top: 20px;
+}
 
+        
         .contact-info-item {
             display: flex;
             margin-bottom: 30px;
@@ -292,31 +291,41 @@ body {
             color: #5551ff;
         }
 
-        @media (max-width: 991px) {
-            .main-section {
-                padding-top: 50px;
-                padding-bottom: 50px;
-            }
+@media screen and (max-width: 768px) {
 
-            .main-row {
-                flex-direction: column;
-            }
+        .main-section {
+            padding: 20px ;
+            display: flex;
+            flex-direction: column;        
+}
 
-            .contact-info-section {
-                margin-bottom: 40px;
-                width: 100%;
-            }
+        .main-section-header {
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente */
+            text-align: center; /* Centra el texto */
+            width: 100%; /* Ajusta el ancho al 100% */
+          
+}
 
-            .contact-form-section {
-                width: 100%;
-            }
-        }
+        .contact-form-section {
+            max-width: 600px; /* Establece un ancho máximo para evitar que el formulario se expanda demasiado */
+}
 
+        .main-section-header h2 {
+            font-size: 28px;
+}
 
+        .main-section-header p {
+            font-size: 21px;
+}
 
+}
+    
 
+           
+        
 
-        .main-footer {
+.main-footer {
       padding: 20px 0;
       display: flex;
       justify-content: space-evenly;
@@ -328,7 +337,7 @@ body {
       list-style: none;
     }
 .main-footer h1 {
-      font-size: 28px;
+      font-size: 16px;
       font-weight: bold;
       line-height: 117%;
       color:  #14152D;
@@ -338,7 +347,7 @@ body {
     }
 .main-footer h2 {
       color:  #14152D;
-      font-size: 16px;
+      font-size: 12px;
 
     }
 .main-footer ul li a {
@@ -348,7 +357,8 @@ body {
 
 footer {
         font-family: 'Noto Sans', sans-serif;
-        font-size: 21px;
+        font-size: 16px;
+        padding-bottom: 20px;
         padding: 1  5px 5px;
         color: #14152D;
         text-align: center;
@@ -358,9 +368,9 @@ footer {
       text-decoration: none;
       color: #2f2b53;
     }
-    .logoinfo p {
+  .logoinfo p {
       color:  #14152D;
-      font-size: 17px;
+      font-size: 12px;
       margin-top: 5px;
     }
     .contact-details {
@@ -377,7 +387,7 @@ footer {
     .contact-details .fa {
       color: #14152D;   
       margin-right: 10px;
-      font-size: 17px;
+      font-size: 16px;
 
     }
     .sociallogos {
@@ -402,8 +412,7 @@ footer {
       .info {
         padding: 20px 0;
       }
-    }
-    @media (max-width: 480px) {
+    
       .main-footer {
         grid-template-columns: 1fr;
       }
@@ -413,9 +422,8 @@ footer {
       .com {
         padding: 20px 0;
       }
-    }
 
-@media screen and (max-width: 768px) {
+ 
  
     .social-footer-wrapper {
         position: relative;
@@ -425,13 +433,19 @@ footer {
         justify-content: center;
     }
 
-    footer {
+    .social-footer-wrapper {
         position: relative;
-        margin-top: 20px; /* Ajusta la separación entre el formulario y el footer */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
+
+
 
 }
    
+
 
 </style>
 </head>
@@ -513,7 +527,7 @@ footer {
                         </div>
 
                         <div class="input-container">
-                            <input type="submit" value="Send" name="">
+                            <input type="submit" value="Enviar" name="">
                         </div>
                     </form>
                 </div>
