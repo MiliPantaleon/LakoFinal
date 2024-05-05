@@ -170,36 +170,67 @@ body {
             width: 100%;
             height: 3px;
             background: linear-gradient(to right, #5551ff, #818181);
+            box-shadow: #818181;
             margin-top: 10px;
    
         }
 
-.presentation {
-            display: flex;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+}       
+
+.column {  
+            flex-basis: 30%; 
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-       
-        }
-.text { 
             background-color: white; /* Fondo semi-transparente para el texto */
-            width:90%;   
-            margin-top: 50px;
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
             padding:20px;
             text-align: left;   
             justify-content: center;
-            border-radius: 10px;
-}
-.text p {
-            
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 21px;     
-            color: rgba(20, 21, 45, 0.8);   
-                  
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
            
+
+}
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
+        }
+
+.column p {
+            font-size: 16px;             
 }
 
 @media screen and (max-width: 768px) {
+
+.container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
   .title h2 {           
             font-size: 38px;
             font-style: bold ;
@@ -219,16 +250,17 @@ body {
   width: 100%;
 }
 
+
+
+
 }
-
-
 
 .accordion {
   width: 100%;
   display: flex;
   justify-content: center;
   height: 600px;
-  gap: 16px;
+  gap: 100px;
   padding-top: 50px;
   transition: 0.3s;
   font-family: 'Noto Sans', sans-serif;
@@ -327,8 +359,8 @@ body {
     flex-direction: column; /* Cambia la dirección del flexbox a columna */
     height: 1000px; /* Elimina la altura fija para que  se ajuste según el contenido */
     width: 100%;
-    padding: 50px;
-    gap: 30px;
+    padding: 20px;
+    gap: 50px;
    
   }
 
@@ -544,17 +576,27 @@ footer {
 
 
 
-      <div class="presentation">
-        <div class="text">
-             <p> Que lo complejo sea sencillo es nuestro objetivo al momento de darle vida a cada proyecto.      
-                Creamos espacios y objetos sencillos, 
-                sin perder armonía ni calidez. 
-                <br>Somos  los cerebros y corazones de Lako, desde 2020 decidimos unir fuerzas 
-                para crear un estudio de diseño con una visión única, nos caracterizamos por estar junto al cliente en todas las etapas, 
-                partimos de una experiencia realista para anticipar lo que más tarde será materializado con nuestro equipo de trabajo. 
-            </p>        
-        </div>
-      </div>
+<div class="container">
+    <div class="column">
+          <h2>¿Qué es LAKO?</h2>
+          <p> Desde 2020 decidimos unir fuerzas para crear un estudio de diseño con una visión única, nos caracterizamos por estar junto al cliente en todas las etapas, 
+            partimos de una experiencia realista para anticipar lo que más tarde será materializado con nuestro equipo de trabajo. 
+          </p>
+    </div>
+
+    <div class="column"> 
+          <h2>¿Cómo trabajamos?</h2>
+          <p> Bajo el lema de que lo complejo sea sencillo, nuestro objetivo al momento de darle vida a cada proyecto.      
+              es crear espacios y objetos sencillos, sin perder armonía ni calidez. 
+          </p> 
+    </div>       
+
+    <div class="column"> 
+          <h2>¿Qué hacemos?</h2>
+          <p> Ofrecemos servicio personalizado para la construcción de locales comerciales, stands en ferias y oficinas.
+          </p> 
+    </div>           
+</div>
 
 
 
