@@ -513,7 +513,7 @@ footer {
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="NuestraHistoria.html">Nuestra Historia</a></li>
+          <li><a href="NuestraHistoria.html">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -524,7 +524,7 @@ footer {
             <i></i>
             <a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng==" class="fa fa-instagram fa-2x" aria-hidden="true"></a>
             <a href="https://www.linkedin.com/company/lako-proyectos/" class="fa fa-linkedin fa-2x" aria-hidden="true"></a>
-            <a href="https://wa.me/1132416414"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+            <a href="https://wa.me/+5491132416414"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -532,67 +532,69 @@ footer {
     <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
   </section>
   
-        function toggleMenu() {
-            var menu = document.querySelector('.menu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+
+  <script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+    }
+
+    function closeMenu() {
+        var menu = document.querySelector('.menu');
+        menu.style.display = 'none';
+    }
+
+    document.addEventListener('click', function (event) {
+        var menu = document.querySelector('.menu');
+        var navbarToggle = document.querySelector('.navbar-toggle');
+
+        if (navbarToggle.contains(event.target)) {
+            return;
         }
 
-        function closeMenu() {
-            var menu = document.querySelector('.menu');
+        if (!menu.contains(event.target) && menu.style.display === 'flex') {
             menu.style.display = 'none';
         }
-
-        document.addEventListener('click', function (event) {
-            var menu = document.querySelector('.menu');
-            var navbarToggle = document.querySelector('.navbar-toggle');
-
-            if (navbarToggle.contains(event.target)) {
-                return;
-            }
-
-            if (!menu.contains(event.target) && menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            }
-        });
-</script>
-
-<script>
-    document.getElementById('whatsapp-icon').addEventListener('click', function () {
-        // Reemplaza el número de teléfono con el tuyo
-        window.open('https://wa.me/5491132416414', '_blank');
     });
 </script>
 
 <script>
-    const slider = document.querySelector (' container');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+document.getElementById('whatsapp-icon').addEventListener('click', function () {
+    // Reemplaza el número de teléfono con el tuyo
+    window.open('https://wa.me/5491132416414', '_blank');
+});
+</script>
 
-    slider.addEventListener ('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e. pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
+<script>
+const slider = document.querySelector (' container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-        slider.addEventListener ('mouseleave', () => {
-            isDown = false;
-            slider. classList. remove('active');
-        });
+slider.addEventListener ('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e. pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
 
-        slider.addEventListener ('mouseup', () => {
-            isDown = false;
-            slider. classList. remove('active');
-        });
+    slider.addEventListener ('mouseleave', () => {
+        isDown = false;
+        slider. classList. remove('active');
+    });
 
-        slider.addEventListener ('mousemove', (e) => {
-        if(!isDown) return;
-            e. preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 3;
-            slider.scrollLeft = scrollLeft-walk;
-        })
+    slider.addEventListener ('mouseup', () => {
+        isDown = false;
+        slider. classList. remove('active');
+    });
+
+    slider.addEventListener ('mousemove', (e) => {
+    if(!isDown) return;
+        e. preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3;
+        slider.scrollLeft = scrollLeft-walk;
+    })
 
 </script>
 </body>
