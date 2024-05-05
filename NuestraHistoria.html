@@ -182,11 +182,11 @@ body {
        
         }
 .text { 
-            background-color: rgba(20, 21, 45, 0.8); /* Fondo semi-transparente para el texto */
+            background-color: white; /* Fondo semi-transparente para el texto */
             width:90%;   
             margin-top: 50px;
-            padding:5px;
-            text-align: center;   
+            padding:20px;
+            text-align: left;   
             justify-content: center;
             border-radius: 10px;
 }
@@ -194,7 +194,7 @@ body {
             
             font-family: 'Noto Sans', sans-serif;
             font-size: 21px;     
-            color: white;   
+            color: rgba(20, 21, 45, 0.8);   
                   
            
 }
@@ -208,6 +208,11 @@ body {
   .title h3  {    
            font-size: 16px;
 }
+
+.text { 
+          
+            margin-top: 5px;
+            }
 
 .text p { 
   font-size: 16px;
@@ -238,7 +243,7 @@ body {
   position: relative;
   overflow: hidden;
   flex: 0 0 400px;
-  border-radius: 50px;
+  border-radius: 10px;
   opacity: 0.75;
 }
 
@@ -320,10 +325,10 @@ body {
 @media screen and (max-width: 768px) {
   .accordion {
     flex-direction: column; /* Cambia la dirección del flexbox a columna */
-    height: 1200px; /* Elimina la altura fija para que  se ajuste según el contenido */
+    height: 1000px; /* Elimina la altura fija para que  se ajuste según el contenido */
     width: 100%;
-    padding: 10px;
-    gap: 20px;
+    padding: 50px;
+    gap: 30px;
    
   }
 
