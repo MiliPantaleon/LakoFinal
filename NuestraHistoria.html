@@ -14,6 +14,8 @@ body {
             margin: 0;
             height: 100vh;
             background-color: #f2f2f2;   
+            overflow-x: hidden;
+          
         }
 
 .header {
@@ -135,116 +137,227 @@ body {
 }
 
 }
+
 * {
             box-sizing: border-box;
         }
-.center {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Establecer un alto mínimo */
-            color: #14152D;
-        }
 
-.main-image {
-            width: 961px;
-            height: 971px;
-            margin-bottom: 0px;
-            margin-top: 80px;
-            
+
+
+
+.title { 
+            text-align: center; /* Alineación izquierda para el título h2 */
+            font-family: 'Noto Sans', sans-serif;
+            color: #14152D;
+            margin-top: 2px;
+}
+
+.title h2 {           
+            font-size: 67px;
+            font-style: bold ;
+            height: 60px;     
+}
+
+.title h3  {
+           
+            font-size: 21px;
+ 
+}
+
+.title h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
         }
 
 .presentation {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-            color: #14152D;  
-            margin: 0 auto; /* Centrar la presentación */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+       
         }
-
-.column {
-            flex: 1;
-            padding: 0 2.7px;
-            text-align: center;            
-        }
-        
-.column img {
-            width: 467px; 
-            height: 700px;                    
-            padding: 10px;
+.text { 
+            background-color: rgba(20, 21, 45, 0.8); /* Fondo semi-transparente para el texto */
+            width:90%;   
+            margin-top: 50px;
+            padding:5px;
+            text-align: center;   
+            justify-content: center;
+            border-radius: 10px;
 }
-.center h2 {
-            text-align: center; /* Alineación izquierda para el título h2 */
-            margin-bottom: 5px; /* Espaciado inferior para separar el título del párrafo */
+.text p {
+            
             font-family: 'Noto Sans', sans-serif;
-            font-size: 37px;
-            font-style: bold ;
-}
-
-.column p {
-            width: 467px; 
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 16px;        
-            text-align: justify;         
-            margin-top: 5px;
-            margin-bottom: 5px;
-            padding: 10px;
-}
-
-.column-close p {
-            width: 467px; 
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 37px;  
-            font-style: italic;      
-            text-align: left;        
-            margin-top: 25%;        
+            font-size: 21px;     
+            color: white;   
+                  
+           
 }
 
 @media screen and (max-width: 768px) {
+  .title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+  .title h3  {    
+           font-size: 16px;
+}
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
+
+}
+
+
+
+.accordion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  gap: 16px;
+  padding-top: 50px;
+  transition: 0.3s;
+  font-family: 'Noto Sans', sans-serif;
+
+}
+
+.accordion:hover {
+  gap: 0;
+}
+
+.accordion li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 400px;
+  border-radius: 50px;
+  opacity: 0.75;
+}
+
+.accordion li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.5);
+}
+
+.accordion li,
+.accordion li img,
+.accordion li .content,
+.accordion li .content span {
+  transition: 0.3s;
+}
+
+.accordion h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 45px;
+  border-bottom: 2px solid #5551ff;            
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.accordion li .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: white;
+  padding: 15px;
+  background: #02022e;
+  background: linear-gradient(
+    0deg,
+    rgb(0 0 0 / 70%) 10%,
+    rgb(255 255 255 / 0%) 100%
+  );
+  opacity: 0;
+  visibility: hidden;
+}
+
+.accordion li .content span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 50px;
+  translate: -300px 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.accordion li:hover {
+  flex: 0 1 260px;
+  scale: 1.1;
+  z-index: 10;
+  opacity: 1;
+}
+
+.accordion li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordion li:hover span {
+  translate: -50% 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media screen and (max-width: 768px) {
+  .accordion {
+    flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    height: 1200px; /* Elimina la altura fija para que  se ajuste según el contenido */
+    width: 100%;
+    padding: 10px;
+    gap: 20px;
    
-  
+  }
 
-    .presentation {
-        flex-direction: column;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        color: #14152D;
-        margin: 30px; /* Ajusta el espacio entre elementos */
-    }
+  .accordion li {
+    flex: 0 1 auto; /* Permite que los elementos se ajusten al contenido */
+    width: 100%; /* Ajusta el ancho al 100% para ocupar todo el espacio disponible */
+    height: 100%;
+    margin-bottom: 16px; /* Agrega margen inferior para separar los elementos */
+  }
 
-    .main-image {
-        width: 100%; /* Haz que la imagen ocupe el 100% del ancho del contenedor */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
-    }
+  .accordion li:hover {
+    flex: 0 1 auto; /* Restaura el comportamiento de flexbox al hacer hover */
+  }
 
+  .accordion li .content {
+    position: static; /* Cambia la posición a estática para que el contenido fluya normalmente */
+    opacity: 1; /* Asegura que el contenido sea visible */
+    visibility: visible; /* Asegura que el contenido sea visible */
+    background: none; /* Elimina el fondo */
+    padding: 20px; /* Elimina el relleno */
+  }
 
-    
-
-
-    .center h2 {
-        text-align: center;
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 2.5em;
-        font-style: bold;
-        margin-bottom: 20px; /* Ajusta el espacio inferior del encabezado */
-    }
-    .column p { 
-        width: 350px;
-    }
-
-    .column-close p {
-            width: 350px; 
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 16px;  
-            font-style: italic;      
-            text-align: left;        
-            margin-top: 25%;        
+  .accordion li .content span {
+    position: static; /* Cambia la posición a estática para que el contenido fluya normalmente */
+    visibility: visible; /* Asegura que el contenido sea visible */
+    opacity: 1; /* Asegura que el contenido sea visible */
+  }
+  .accordion h2 {
+    margin-bottom: 8px; /* Reduce el margen inferior */
+    color: #14152D;
+  }
 }
-}
+
+
 
 
 .main-footer {
@@ -363,7 +476,6 @@ footer {
     }
 
 }
-   
 
 </style>
 </head>
@@ -393,109 +505,99 @@ footer {
 </header>
 
 
-<div class="center">
-    <img src="11 - Presentacion/00 - Foto Portada.jpg" alt="Imagen Principal" class="main-image"> 
-    <h2>LAKO</h2>
-    <div class="presentation">
-        <div class="column">
-            <p>Es una palabra de origen croata, significa sencillez. Eso es lo <br> 
-            que nos representa y lo que buscamos en nuestro equipo de <br>
-            arquitectos y diseñadores en cada proyecto de vida de cada <br>
-            cliente.</p>       
-        </div>
-        <div class="column"> 
-            <p>Consideramos que la complejidad más grande radica en <br>
-            llegar a crear espacios y objetos sencillos, sin perder su <br>
-            armonía y calidez. Cuanto mayor es el conocimiento, lo <br>
-            complejo termina siendo sencillo.</p>
-        </div>
-    </div>
-    <div class="presentation">
-        <div class="column">
-            <img src="11 - Presentacion/01 - Foto Feli.jpg" alt="Imagen 1">
-        </div>
-        <div class="column">
-            <img src="11 - Presentacion/02 - Foto Nacho.jpg" alt="Imagen 2">
-        </div>
-    </div>
-        
-        <div class="presentation">
-            <div class="column">
-                <p>Somos Nacho Ramírez y Feli Varga los cerebros y corazones <br>
-                detrás de Lako Proyectos. En 2020, decidimos unir fuerzas <br>
-                para crear un estudio de diseño con una visión única. En un <br>
-                principio, nos enfocamos en la fabricación de muebles <br>
-                armables: piezas de diseño simple, accesibles y que se <br>
-                integran perfectamente en la vida cotidiana de <br>
-                nuestros clientes.</p>       
-            </div>
-            <div class="column"> 
-                <p>Con el tiempo, ampliamos nuestras horizontes hacia la <br>
-                    segunda unidad de negocio: el diseño de espacios y <br>
-                    arquitectura. Actualmente, nos sumergimos en el mundo de <br>
-                    modelar, renderizar y crear visualizaciones de proyectos. <br>
-                    Nuestro objetivo es proporcionar a nuestros clientes una <br>
-                    experiencia visual tan realista que les permita sentir y <br>
-                    anticipar lo que más tarde se materializa con nuestro equipo de trabajo.</p>
-            </div>
-        </div>
-
-            <div class="presentation">
-                <div class="column">
-                    <img src="11 - Presentacion/03 - Foto Cierre.jpg" alt="Imagen 1">
-                </div>
-                <div class="column-close"> 
-                    <p>“Consideramos que la 
-                        complejidad más grande radica 
-                        en llegar a crear espacios y 
-                        objetos sencillos, sin perder su 
-                        armonía y calidez. Cuanto 
-                        mayor es el conocimiento, lo 
-                        complejo termina siendo sencillo”</p>
-                </div>
-            </div>
-
-        
+ <div class="title">
+        <h2>LAKO </h2>
+        <h3>(de origen croata): 1 adj. facil.</h3>
+         
 </div>
 
-<section id="footer">
-    <div class="main-footer">
-      <div class="logoinfo" data-aos="fade-up">
-        <div class="contact-details">
-          <h1>Contacto</h1>
-          <li>
-            <a href="tel:+91">+549 11 3241-6414</a>
-          </li>
-          <li>
-            <a href="mailto:estudio@lako.com.ar">estudio@lako.com.ar</a>
-          </li>
-          </li>
+<ul class="accordion">
+  <li>
+      <img src="11 - Presentacion/01 - Foto Feli.jpg" alt="Foto Diseñador">
+      <div class="content">
+          <span>
+            <h2>Feli</h2>
+            <p>Diseño</p>
+          </span>
+      </div>
+  </li> 
+  
+  <li>
+    <img src="11 - Presentacion/03 - Foto Ema .jpg " alt="">
+    <div class="content">
+      <span>
+        <h2>Ema</h2>
+        <p>Técnico</p>
+      </span>
+    </div>
+  </li>
+
+  <li>
+    <img src="11 - Presentacion/02 - Foto Nacho.jpg" alt="Foto Arquitecto">
+    <div class="content">
+        <span>
+          <h2>Nacho</h2> 
+          <p>Arquitectura</p>
+        </span>
+    </div>
+  </li>
+</ul>
+
+
+
+      <div class="presentation">
+        <div class="text">
+             <p> Que lo complejo sea sencillo es nuestro objetivo al momento de darle vida a cada proyecto.      
+                Creamos espacios y objetos sencillos, 
+                sin perder armonía ni calidez. 
+                <br>Somos  los cerebros y corazones de Lako, desde 2020 decidimos unir fuerzas 
+                para crear un estudio de diseño con una visión única, nos caracterizamos por estar junto al cliente en todas las etapas, 
+                partimos de una experiencia realista para anticipar lo que más tarde será materializado con nuestro equipo de trabajo. 
+            </p>        
         </div>
       </div>
-      <div class="com " data-aos="fade-up">
-        <h1>Sitio Web</h1>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="NuestraHistoria.html">Nuestra Historia</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+
+
+
+<section id="footer">
+  <div class="main-footer">
+    <div class="logoinfo" data-aos="fade-up">
+      <div class="contact-details">
+        <h1>Contacto</h1>
+        <li>
+          <a href="tel:+91">+549 11 3241-6414</a>
+        </li>
+        <li>
+          <a href="mailto:estudio@lako.com.ar">estudio@lako.com.ar</a>
+        </li>
+        </li>
       </div>
-      <div class="info" data-aos="fade-up">
-        <h1>Nuestras redes</h1>
-        <div class="sociallogos">
-          <div class="logobox">
-            <i></i>
-            <a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng==" class="fa fa-instagram fa-2x" aria-hidden="true"></a>
-            <a href="https://www.linkedin.com/company/lako-proyectos/" class="fa fa-linkedin fa-2x" aria-hidden="true"></a>
-            <a href="https://wa.me/123456789"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
-          </div>
+    </div>
+    <div class="com " data-aos="fade-up">
+      <h1>Sitio Web</h1>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="NuestraHistoria.html">Nuestra Historia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="info" data-aos="fade-up">
+      <h1>Nuestras redes</h1>
+      <div class="sociallogos">
+        <div class="logobox">
+          <i></i>
+          <a href="https://instagram.com/lakoproyectos?igshid=NzZlODBkYWE4Ng==" class="fa fa-instagram fa-2x" aria-hidden="true"></a>
+          <a href="https://www.linkedin.com/company/lako-proyectos/" class="fa fa-linkedin fa-2x" aria-hidden="true"></a>
+          <a href="https://wa.me/123456789"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
-    <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
-  </section>
-  
+  </div>
+  <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
+</section>
+
+
 
 <script>
     // Función para mostrar/ocultar el menú al hacer clic en el ícono de hamburguesa
