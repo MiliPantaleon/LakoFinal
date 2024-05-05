@@ -155,39 +155,38 @@ body {
             flex-direction: column;
             align-items: center; /* Centra horizontalmente */
             text-align: center; /* Centra el texto */
-            width: 100%; /* Ajusta el ancho al 100% */
-          
-}
+            width: 100%; /* Ajusta el ancho al 100% */     
+            color:#28295B;
+            margin-bottom: 10px;
+            font-family: 'Noto Sans', sans-serif;  
+        }
 
         .main-section-header h2 {
-            color:#28295B;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-family: 'Noto Sans', sans-serif;
             font-size: 37px;
+            font-weight: bold;
         }
 
         .main-section-header p {
-            color:#28295B;
-            margin-bottom: 20px;
-            font-family: 'Noto Sans', sans-serif;
             font-size: 28px;
         }
 
         .main-row {
             display: flex;
             flex-wrap: wrap;
+            padding-top: 10px;
           
         }
 
         .contact-form-section {
             background-color: #fff;
-            padding: 40px;
-            width: 100%; /* Ajusta el ancho al 100% */
-            min-width: 600px; /* Establece un ancho máximo para evitar que el formulario se expanda demasiado */
-            margin-top: 20px;
-}
-
+            padding: 40px;    
+            padding-bottom: 20px;
+            padding-top: 20px;
+            width: 45%; 
+            min-width: 600px; 
+            border-radius: 20px;
+        
+        }
         
         .contact-info-item {
             display: flex;
@@ -221,17 +220,10 @@ body {
 
         }
 
-        .contact-form-section {
-            background-color: #fff;
-            padding: 40px;
-            width: 45%;
-            padding-bottom: 20px;
-            padding-top: 20px;
-        }
 
-        .contact-form-section h2 {
-            
-            font-size: 2em;
+
+        .contact-form-section h2 {  
+            font-size: 16px;
             font-family: 'Noto Sans', sans-serif;
             margin-bottom: 10px;
             color: #333;
@@ -250,7 +242,7 @@ body {
             font-size: 16px;
             margin: 10px 0;
             border: none;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #5551ff;
             outline: none;
             resize: none;
         }
@@ -291,33 +283,30 @@ body {
             color: #5551ff;
         }
 
+
 @media screen and (max-width: 768px) {
+   
+.main-section-header {
+            height: 1px;
+        }
 
-        .main-section {
-            padding: 20px ;
-            display: flex;
-            flex-direction: column;        
-}
+.contact-form-section {
+            min-width: 350px;  
+            padding-top: 3px;
+            padding-bottom: 3px;
+         
+        }
 
-        .main-section-header {
-            flex-direction: column;
-            align-items: center; /* Centra horizontalmente */
-            text-align: center; /* Centra el texto */
-            width: 100%; /* Ajusta el ancho al 100% */
-          
-}
-
-        .contact-form-section {
-            max-width: 600px; /* Establece un ancho máximo para evitar que el formulario se expanda demasiado */
-}
-
-        .main-section-header h2 {
+        .main-section-header h2{
             font-size: 28px;
+         
 }
 
         .main-section-header p {
             font-size: 21px;
+         
 }
+
 
 }
     
