@@ -82,9 +82,7 @@ body {
     color: white;
 }
 
-* {
-            box-sizing: border-box;
-        }
+
 
 @media screen and (max-width: 768px) {
 
@@ -142,73 +140,123 @@ body {
 
 }
 
-.text-along-logo { 
-    text-align: center; /* Centra horizontalmente el texto */
-    position: absolute;
-    top: 30%; /* Coloca el texto en el centro vertical */
-    left: 50%; /* Centra horizontalmente el texto */
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 80%; /* Modifica el ancho según sea necesario */
-    max-width: 600px; /* Establece un ancho máximo */
-    border-radius: 3px;
-    font-family: 'Noto Sans', sans-serif;
 
-        
+
+* {
+            box-sizing: border-box;
         }
 
-.title {        
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
-    color: #686868;
-   
+
+
+
+.title { 
+            text-align: center; /* Alineación izquierda para el título h2 */
+            font-family: 'Noto Sans', sans-serif;
+            color: #14152D;
+            margin-top: 2px;
 }
 
- .text-along-logo::after {       
+.title h2 {           
+            font-size: 67px;
+            font-style: bold ;
+            height: 60px;     
+}
+
+.title h3  {
+           
+            font-size: 21px;
+ 
+}
+
+.title h2::after {       
             content: "";
             display: block;
             width: 100%;
             height: 3px;
-            background: linear-gradient(to right, #5052B6, #818181);
+            background: linear-gradient(to right, #5551ff, #818181);
+            box-shadow: #818181;
             margin-top: 10px;
+   
         }
 
-.subtitle {      
-            color: #686868;
-            font-size: 21px;
-            text-decoration: none;
-            font-family: 'Noto Sans', sans-serif;
-        }
 
-@media screen and (max-width: 768px){
-.text-along-logo {
-            text-align: center;
-            position: absolute;
-            top: 40%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            background-color: #5052B6;
-            width: 100%;
-        }
-.title
-     {        
-            color: white;
-            font-size: 21px;
-            text-decoration: bold;
-            font-family: 'Noto Sans', sans-serif;
-        }
-.subtitle{
-            color: white;
-            margin-bottom: 1%;
-    }
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+}       
 
-.text-along-logo::after {       
-            display: none;
-        }
+.column {  
+            flex-basis: 30%; 
+            flex-direction: column;
+            background-color: white; /* Fondo semi-transparente para el texto */
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
+            padding:20px;
+            text-align: left;   
+            justify-content: center;
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
+           
 
 }
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
+        }
+
+.column p {
+            font-size: 16px;             
+}
+
+
+@media screen and (max-width: 768px) {
+
+.container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
+  .title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+  .title h3  {    
+           font-size: 16px;
+}
+
+.text { 
+          
+            margin-top: 5px;
+            }
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
+}
+
+
 
 * {
 
@@ -268,23 +316,105 @@ body {
 
 .container::-webkit-scrollbar {
     width: 3px;
-    height: 5px;
+    height: 15px;
 }
 
 .container::-webkit-scrollbar-track {
-    background:#5052B6;
-    border-radius: 2px;
+    background:#9a9a9a;
+    border-radius: 10px;
   
 }
 .container::-webkit-scrollbar-thumb {
-    background: #14152D;
-    border-radius: 2px;
+    background: #5052B6;
+    border-radius: 10px;
   
 }
 .container::-webkit-scrollbar-thumb :hover {
     background: #5052B6;
 }
 
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+
+}       
+
+.column {  
+            flex-basis: 30%; 
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
+            padding:20px;
+            text-align: left;   
+            justify-content: center;
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
+           
+
+}
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
+        }
+
+.column p {
+            font-size: 16px;             
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+.text-container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
+
+.title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+.title h3  {    
+           font-size: 16px;
+}
+
+.text { 
+          
+            margin-top: 5px;
+            }
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
+
+
+
+
+}
 
 @media screen and (max-width: 768px) {
     .container {
@@ -302,7 +432,6 @@ body {
         margin: 0; /* Elimina el margen */
     }
 }
-
 
 
 .main-footer {
@@ -421,8 +550,7 @@ footer {
     }
 
 }
-   
-    </style>
+</style>
 </head>
 
 <body>
@@ -452,14 +580,10 @@ footer {
 </header> 
 
 
-      <div class="text-along-logo">
-    <div>
-        <h1 class="title">COOKIE BROTHERS</h1>
-    </div> 
-    
-    <div>
-        <h2 class="subtitle">CABA</h2>
-    </div>  
+
+<div class="title">
+  <h2>COOKIE BROTHERS </h2>
+  <h3>BUENOS AIRES</h3>
 </div>
 
 <div class="background">
@@ -477,6 +601,11 @@ footer {
         </article>
         <article class="card">
             <figure>
+                <img src="03 - CB.png" alt="Detalle de materiales" title="detalle de materiales">
+            </figure>
+        </article>
+        <article class="card">
+            <figure>
                 <img src="04 - CB.jpg" alt="Detalle de materiales" title="detalle de materiales">
             </figure>
         </article>
@@ -485,13 +614,39 @@ footer {
                 <img src="05 - CB.jpg" alt="Detalle de materiales" title="detalle de materiales">
             </figure>
         </article>
-        <article class="card">
-            <figure>
-                <img src="06 - CB - FICHA.png" alt="Detalle de materiales" title="detalle de materiales">
-            </figure>
-        </article>
+    
     </section>
 </div>
+
+
+<div class="text-container">
+    <div class="column">
+          <h2>Objetivo</h2>
+          <p> A partir de la creación de la imagen de marca, creamos un espacio 
+            acogedor y moderno, que lograra reflejarla. </p>
+    </div>
+
+    <div class="column"> 
+          <h2>Desafíos</h2>
+          <p>Los 60 m2 integrales de proyecto lograron estar finalizados
+            en un tiempo récord de un mes, cumpliendo con las expectativas y los plazos del
+            cliente. 
+            Estamos muy orgullosos de haber participado y de haber 
+            contribuido al crecimiento de esta marca que apuesta al futuro.
+          </p> 
+    </div>       
+
+    <div class="column"> 
+          <h2>Materiales y Espacios</h2>
+          <p> Para finalmente materializar la identidad creada, optamos por la idea de industrializar
+            darle un diseño único a cada pieza, pero materializarlas a través de procesos industrializados, 
+            tales como, corte láser, plegado CNC, pintura al horno, entre otros. 
+            El resultado fue un espacio acogedor y moderno compuesto figuras geometricas, 
+            colores contrastantes, luz natural y efectos visuales. 
+          </p> 
+    </div>           
+</div>
+
 
 
 <section id="footer">
@@ -532,69 +687,71 @@ footer {
     <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
   </section>
   
-
-  <script>
-    function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
-    }
-
-    function closeMenu() {
-        var menu = document.querySelector('.menu');
-        menu.style.display = 'none';
-    }
-
-    document.addEventListener('click', function (event) {
-        var menu = document.querySelector('.menu');
-        var navbarToggle = document.querySelector('.navbar-toggle');
-
-        if (navbarToggle.contains(event.target)) {
-            return;
+  
+  
+  
+<script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
         }
 
-        if (!menu.contains(event.target) && menu.style.display === 'flex') {
+        function closeMenu() {
+            var menu = document.querySelector('.menu');
             menu.style.display = 'none';
         }
+
+        document.addEventListener('click', function (event) {
+            var menu = document.querySelector('.menu');
+            var navbarToggle = document.querySelector('.navbar-toggle');
+
+            if (navbarToggle.contains(event.target)) {
+                return;
+            }
+
+            if (!menu.contains(event.target) && menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            }
+        });
+</script>
+
+<script>
+    document.getElementById('whatsapp-icon').addEventListener('click', function () {
+        // Reemplaza el número de teléfono con el tuyo
+        window.open('https://wa.me/5491132416414', '_blank');
     });
 </script>
 
 <script>
-document.getElementById('whatsapp-icon').addEventListener('click', function () {
-    // Reemplaza el número de teléfono con el tuyo
-    window.open('https://wa.me/5491132416414', '_blank');
-});
-</script>
+    const slider = document.querySelector (' container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-<script>
-const slider = document.querySelector (' container');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    slider.addEventListener ('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e. pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
 
-slider.addEventListener ('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active');
-        startX = e. pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
+        slider.addEventListener ('mouseleave', () => {
+            isDown = false;
+            slider. classList. remove('active');
+        });
 
-    slider.addEventListener ('mouseleave', () => {
-        isDown = false;
-        slider. classList. remove('active');
-    });
+        slider.addEventListener ('mouseup', () => {
+            isDown = false;
+            slider. classList. remove('active');
+        });
 
-    slider.addEventListener ('mouseup', () => {
-        isDown = false;
-        slider. classList. remove('active');
-    });
-
-    slider.addEventListener ('mousemove', (e) => {
-    if(!isDown) return;
-        e. preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 3;
-        slider.scrollLeft = scrollLeft-walk;
-    })
+        slider.addEventListener ('mousemove', (e) => {
+        if(!isDown) return;
+            e. preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3;
+            slider.scrollLeft = scrollLeft-walk;
+        })
 
 </script>
 </body>

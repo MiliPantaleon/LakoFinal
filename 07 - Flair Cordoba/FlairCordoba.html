@@ -82,9 +82,7 @@ body {
     color: white;
 }
 
-* {
-            box-sizing: border-box;
-        }
+
 
 @media screen and (max-width: 768px) {
 
@@ -142,73 +140,123 @@ body {
 
 }
 
-.text-along-logo { 
-    text-align: center; /* Centra horizontalmente el texto */
-    position: absolute;
-    top: 30%; /* Coloca el texto en el centro vertical */
-    left: 50%; /* Centra horizontalmente el texto */
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 80%; /* Modifica el ancho según sea necesario */
-    max-width: 600px; /* Establece un ancho máximo */
-    border-radius: 3px;
-    font-family: 'Noto Sans', sans-serif;
 
-        
+
+* {
+            box-sizing: border-box;
         }
 
-.title {        
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
-    color: #686868;
-   
+
+
+
+.title { 
+            text-align: center; /* Alineación izquierda para el título h2 */
+            font-family: 'Noto Sans', sans-serif;
+            color: #14152D;
+            margin-top: 2px;
 }
 
- .text-along-logo::after {       
+.title h2 {           
+            font-size: 67px;
+            font-style: bold ;
+            height: 60px;     
+}
+
+.title h3  {
+           
+            font-size: 21px;
+ 
+}
+
+.title h2::after {       
             content: "";
             display: block;
             width: 100%;
             height: 3px;
-            background: linear-gradient(to right, #5052B6, #818181);
+            background: linear-gradient(to right, #5551ff, #818181);
+            box-shadow: #818181;
             margin-top: 10px;
+   
         }
 
-.subtitle {      
-            color: #686868;
-            font-size: 21px;
-            text-decoration: none;
-            font-family: 'Noto Sans', sans-serif;
-        }
 
-@media screen and (max-width: 768px){
-.text-along-logo {
-            text-align: center;
-            position: absolute;
-            top: 40%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            background-color: #5052B6;
-            width: 100%;
-        }
-.title
-     {        
-            color: white;
-            font-size: 21px;
-            text-decoration: bold;
-            font-family: 'Noto Sans', sans-serif;
-        }
-.subtitle{
-            color: white;
-            margin-bottom: 1%;
-    }
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+}       
 
-.text-along-logo::after {       
-            display: none;
-        }
+.column {  
+            flex-basis: 30%; 
+            flex-direction: column;
+            background-color: white; /* Fondo semi-transparente para el texto */
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
+            padding:20px;
+            text-align: left;   
+            justify-content: center;
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
+           
 
 }
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
+        }
+
+.column p {
+            font-size: 16px;             
+}
+
+
+@media screen and (max-width: 768px) {
+
+.container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
+  .title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+  .title h3  {    
+           font-size: 16px;
+}
+
+.text { 
+          
+            margin-top: 5px;
+            }
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
+}
+
+
 
 * {
 
@@ -268,23 +316,105 @@ body {
 
 .container::-webkit-scrollbar {
     width: 3px;
-    height: 5px;
+    height: 15px;
 }
 
 .container::-webkit-scrollbar-track {
-    background:#5052B6;
-    border-radius: 2px;
+    background:#9a9a9a;
+    border-radius: 10px;
   
 }
 .container::-webkit-scrollbar-thumb {
-    background: #14152D;
-    border-radius: 2px;
+    background: #5052B6;
+    border-radius: 10px;
   
 }
 .container::-webkit-scrollbar-thumb :hover {
     background: #5052B6;
 }
 
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+
+}       
+
+.column {  
+            flex-basis: 30%; 
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
+            padding:20px;
+            text-align: left;   
+            justify-content: center;
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
+           
+
+}
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
+        }
+
+.column p {
+            font-size: 16px;             
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+.text-container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
+
+.title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+.title h3  {    
+           font-size: 16px;
+}
+
+.text { 
+          
+            margin-top: 5px;
+            }
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
+
+
+
+
+}
 
 @media screen and (max-width: 768px) {
     .container {
@@ -302,7 +432,6 @@ body {
         margin: 0; /* Elimina el margen */
     }
 }
-
 
 
 .main-footer {
@@ -421,8 +550,7 @@ footer {
     }
 
 }
-   
-    </style>
+</style>
 </head>
 
 <body>
@@ -452,14 +580,10 @@ footer {
 </header> 
 
 
-      <div class="text-along-logo">
-    <div>
-        <h1 class="title">STAND FLAIR</h1>
-    </div> 
-    
-    <div>
-        <h2 class="subtitle">CORDOBA</h2>
-    </div>  
+
+<div class="title">
+  <h2>STAND FLAIR </h2>
+  <h3>CÓRDOBA</h3>
 </div>
 
 <div class="background">
@@ -480,14 +604,40 @@ footer {
                 <img src="03 - FC.jpg" alt="Detalle de materiales" title="detalle de materiales">
             </figure>
         </article>
-        <article class="card">
-            <figure>
-                <img src="04 - FC - FICHA.png" alt="Detalle de materiales" title="detalle de materiales">
-            </figure>
-        </article>
-        
+   
     </section>
 </div>
+
+
+<div class="text-container">
+    <div class="column">
+          <h2>Breve historia</h2>
+          <p> En esta oportunidad, satisfechos por los resultados de sus oficinas, nuestros clientes de Flair nos volvieron a contactar para realizar
+            un stand en una exposición alimentaria en la provincia de Córdoba.  </p>
+    </div>
+
+    <div class="column"> 
+          <h2>Desafíos</h2>
+          <p> Nuestro enfoque en este proyecto fue la versatilidad y 
+            la eficiencia. 
+            Diseñamos un stand modular que pudo ser reutilizado, con el objetivo de 
+            optimizar la inversión del cliente.
+            A pesar de sólo contar con dos días de montaje, logramos
+            convertir el espacio en un ambiente que 
+            reflejaba el propósito de Flair: 
+            comunicar sus servicios al sector alimenticio.
+          </p> 
+    </div>       
+
+    <div class="column"> 
+          <h2>Información</h2>
+          <p>En los 16 m2 del stand, cada detalle fue meticulosamente pensado y 
+            diseñado para transmitir la esencia de la marca y 
+            atraer la atención de los visitantes de la exposición. 
+          </p> 
+    </div>           
+</div>
+
 
 
 <section id="footer">
@@ -527,6 +677,8 @@ footer {
     </div>
     <footer>© 2024 Lako diseño y arquitectura. Todos los derechos reservados.</footer>
   </section>
+  
+  
   
   
 <script>

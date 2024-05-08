@@ -82,9 +82,7 @@ body {
     color: white;
 }
 
-* {
-            box-sizing: border-box;
-        }
+
 
 @media screen and (max-width: 768px) {
 
@@ -142,68 +140,120 @@ body {
 
 }
 
-.text-along-logo { 
-    text-align: center; /* Centra horizontalmente el texto */
-    position: absolute;
-    top: 30%; /* Coloca el texto en el centro vertical */
-    left: 50%; /* Centra horizontalmente el texto */
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 80%; /* Modifica el ancho según sea necesario */
-    max-width: 600px; /* Establece un ancho máximo */
-    border-radius: 3px;
-    color: #14152D;
-    font-family: 'Noto Sans', sans-serif;
 
-        
+
+* {
+            box-sizing: border-box;
         }
 
-.title {        
-    font-size: 67px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
-   
+
+
+
+.title { 
+            text-align: center; /* Alineación izquierda para el título h2 */
+            font-family: 'Noto Sans', sans-serif;
+            color: #14152D;
+            margin-top: 2px;
 }
 
- .title::after {       
-    content: "";
+.title h2 {           
+            font-size: 67px;
+            font-style: bold ;
+            height: 60px;     
+}
+
+.title h3  {
+           
+            font-size: 21px;
+ 
+}
+
+.title h2::after {       
+            content: "";
             display: block;
             width: 100%;
             height: 3px;
             background: linear-gradient(to right, #5551ff, #818181);
             box-shadow: #818181;
             margin-top: 10px;
+   
         }
 
-.subtitle {      
-            font-size: 21px;
-            text-decoration: none;
-        }
 
-@media screen and (max-width: 768px){
-.text-along-logo {
-            text-align: center;
-            position: absolute;
-            top: 40%;
-            left:50%;
-            transform: translate(-50%, -50%);
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 100px 10px 100px;
+}       
+
+.column {  
+            flex-basis: 30%; 
+            flex-direction: column;
+            background-color: white; /* Fondo semi-transparente para el texto */
+            box-shadow: 2px 4px 6px #818181;
+            margin: 30px;
+            padding:20px;
+            text-align: left;   
+            justify-content: center;
+            border-radius: 10px; 
+            font-family: 'Noto Sans', sans-serif;  
+            color:#14152D;   
+           
+
+}
+.column h2 { 
+          font-size: 21px;
+          font-style: bold;
+          color: #5551ff;
+}
+
+.column h2::after {       
+            content: "";
+            display: block;
             width: 100%;
-        }
-.title
-     {        
-            font-size: 21px;
-            text-decoration: bold;
-            font-family: 'Noto Sans', sans-serif;
-        }
-.subtitle{
-            margin-bottom: 1%;
-    }
-
-.text-along-logo::after {       
-            display: none;
+            height: 1px;
+            background: linear-gradient(to right, #5551ff, #818181);
+            margin-top: 10px;
+   
         }
 
+.column p {
+            font-size: 16px;             
+}
+
+
+@media screen and (max-width: 768px) {
+
+.container {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente las columnas */
+    margin-left: 20px; /* Ajusta los márgenes superior e inferior */
+    margin-right: 20px;
+  }
+
+  .column {
+    margin: 20px 0; /* Ajusta los márgenes superior e inferior */
+}
+  .title h2 {           
+            font-size: 38px;
+            font-style: bold ;
+            height: 40px;     
+}
+  .title h3  {    
+           font-size: 16px;
+}
+
+.text { 
+          
+            margin-top: 5px;
+            }
+
+.text p { 
+  font-size: 16px;
+  width: 100%;
+}
 }
 
 
@@ -283,8 +333,6 @@ body {
     background: #5052B6;
 }
 
-
-
 .text-container {
   display: flex;
   justify-content: space-between;
@@ -295,8 +343,7 @@ body {
 .column {  
             flex-basis: 30%; 
             flex-direction: column;
-         
-            background-color: white; /* Fondo semi-transparente para el texto */
+            background-color: white;
             box-shadow: 2px 4px 6px #818181;
             margin: 30px;
             padding:20px;
@@ -344,12 +391,13 @@ body {
   .column {
     margin: 20px 0; /* Ajusta los márgenes superior e inferior */
 }
-  .title h2 {           
+
+.title h2 {           
             font-size: 38px;
             font-style: bold ;
             height: 40px;     
 }
-  .title h3  {    
+.title h3  {    
            font-size: 16px;
 }
 
@@ -502,8 +550,7 @@ footer {
     }
 
 }
-   
-    </style>
+</style>
 </head>
 
 <body>
@@ -533,14 +580,10 @@ footer {
 </header> 
 
 
-      <div class="text-along-logo">
-    <div>
-        <h1 class="title">MINI POU</h1>
-    </div> 
-    
-    <div>
-        <h2 class="subtitle">CABA</h2>
-    </div>  
+
+<div class="title">
+  <h2>MINI POU </h2>
+  <h3>CABA</h3>
 </div>
 
 <div class="background">
