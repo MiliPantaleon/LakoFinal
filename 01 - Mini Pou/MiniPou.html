@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js" integrity="sha384-kk++2ye5c7TxgZ8vZ4fbU+Gd9UHVCmsXb3L6ToxaNTZqnxXkytT7Yh8/2TwAtJ+VQ" crossorigin="anonymous"></script>
+    
+
 <style>
 
 body {
@@ -243,14 +245,50 @@ body {
 }
 
 
-
-
 .background {
     display: flex;
     justify-content: center;
     padding-top: 200px ;
 }
 
+.arrow {
+
+    top: 50%;
+    cursor: pointer;
+    display:flex; /* Asegura que las flechas estén visibles */
+}
+
+.left-arrow,
+.right-arrow {
+    cursor: pointer;
+    
+  
+    font-weight: lighter  ;
+  
+
+}
+
+.left-arrow {
+    left: 10px; /* Ajusta la posición de la flecha izquierda */
+    align-items: center;
+  
+}
+
+.right-arrow {
+    right: 10px; /* Ajusta la posición de la flecha derecha */
+    align-items: center;
+}
+
+.arrow i {
+    font-size: 38px; /* Ajusta el tamaño de la flecha */
+    color: #5551ff;
+    
+}
+
+.arrow i.clicked {
+    color: #14152D; /* Cambia el color a una versión más oscura */ 
+  
+}
 .container { 
     display: flex;
     flex-direction: row;
@@ -296,7 +334,7 @@ body {
 
 .container::-webkit-scrollbar {
     width: 3px;
-    height: 15px;
+    height: 5px;
 }
 
 .container::-webkit-scrollbar-track {
@@ -358,6 +396,11 @@ body {
 
 
 @media screen and (max-width: 768px) {
+  .arrow {
+    
+ display: none;
+}
+
 
 .text-container {
     flex-direction: column;
@@ -566,7 +609,11 @@ footer {
   <h3>CABA</h3>
 </div>
 
-<div class="background">
+<div class="background"> 
+
+                  <div class="arrow left-arrow">
+                    <i class="fa fa-arrow-left"></i>
+                  </div>
     <section class="container">
    
         <article class="card">
@@ -591,8 +638,10 @@ footer {
         </article>
     
     </section>
+                  <div class="arrow right-arrow">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
 </div>
-
 
 <div class="text-container">
     <div class="column">
@@ -694,37 +743,71 @@ footer {
     });
 </script>
 
+
 <script>
-    const slider = document.querySelector (' container');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+const container = document.querySelector('.container');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+let isAutoScrolling = true;
 
-    slider.addEventListener ('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e. pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
+// Función para desplazar el carrusel hacia la derecha
+function scrollRight() {
+    container.scrollLeft += container.clientWidth; // Desplazamiento igual al ancho del contenedor
+}
 
-        slider.addEventListener ('mouseleave', () => {
-            isDown = false;
-            slider. classList. remove('active');
-        });
+// Función para iniciar/detener el desplazamiento automático
+function toggleAutoScroll() {
+    isAutoScrolling = !isAutoScrolling;
+    if (isAutoScrolling) {
+        autoScrollInterval = setInterval(scrollRight, 3000); // Desplazamiento cada 3 segundos
+    } else {
+        clearInterval(autoScrollInterval);
+    }
+}
 
-        slider.addEventListener ('mouseup', () => {
-            isDown = false;
-            slider. classList. remove('active');
-        });
+// Event listener para detener el desplazamiento automático cuando el mouse entra en el carrusel
+container.addEventListener('mouseenter', () => {
+    clearInterval(autoScrollInterval);
+});
 
-        slider.addEventListener ('mousemove', (e) => {
-        if(!isDown) return;
-            e. preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 3;
-            slider.scrollLeft = scrollLeft-walk;
-        })
+// Event listener para reanudar el desplazamiento automático cuando el mouse sale del carrusel
+container.addEventListener('mouseleave', () => {
+    if (isAutoScrolling) {
+        autoScrollInterval = setInterval(scrollRight, 3000);
+    }
+});
+
+// Event listener para la flecha izquierda
+leftArrow.addEventListener('click', () => {
+    container.scrollLeft -= container.clientWidth; // Desplazamiento igual al ancho del contenedor
+});
+
+// Event listener para la flecha derecha
+rightArrow.addEventListener('click', () => {
+    container.scrollLeft += container.clientWidth; // Desplazamiento igual al ancho del contenedor
+});
+
+// Iniciar el desplazamiento automático al cargar la página
+let autoScrollInterval = setInterval(scrollRight, 3000);
+
+// Selecciona todas las flechas
+const arrows = document.querySelectorAll('.arrow i');
+
+// Itera sobre cada flecha
+arrows.forEach(arrow => {
+    // Agrega un event listener para el evento 'click'
+    arrow.addEventListener('click', () => {
+        // Agrega la clase 'clicked' cuando se hace clic
+        arrow.classList.add('clicked');
+        // Elimina la clase 'clicked' después de un cierto tiempo
+        setTimeout(() => {
+            arrow.classList.remove('clicked');
+        }, 300); // Cambia este valor para ajustar la duración de la animación (en milisegundos)
+    });
+});
+
 
 </script>
+
 </body>
 </html>
