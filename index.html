@@ -129,6 +129,7 @@ body {
 .container {
   height: 50vh;
   width: 100vh;
+  z-index: -1 ;
 }     
 
 .bg {
@@ -146,10 +147,12 @@ body {
 .bg2 {
   animation-direction:alternate-reverse;
   animation-duration:4s;
+  z-index: -1 ;
 }
 
 .bg3 {
   animation-duration:5s;
+  z-index: -1 ;
 }
 
 .content {
@@ -160,6 +163,7 @@ body {
   transform:translate(-50%, -50%);
   font-family: 'Noto Sans', sans-serif;
   height: 100px;
+  z-index: -1 ;
   
 }
 
@@ -167,12 +171,14 @@ h1 {
   color:#f2f2f2;
   font-size: 200px;
   box-shadow: #14152D;
+  z-index: -1 ;
   
 }
 
 .animated-text {
   opacity: 0;
   animation: slide-up 5s forwards; /* Duración y tipo de animación */
+  z-index: -1 ;
 }
 
 @keyframes slide-up {
@@ -289,7 +295,6 @@ footer a {
     
     @media only screen and (max-width: 749px) {
  
-
       .main-footer {
         padding: 20px;
         display: grid;
@@ -335,11 +340,10 @@ footer a {
 </style>
 </head>
 
+
 <body>
-
     <title>Lako diseño y arquitectura</title>
-
-
+    
     <header class="header">
       <nav class="navbar">
             <div class="navbar-toggle" onclick="toggleMenu()">
