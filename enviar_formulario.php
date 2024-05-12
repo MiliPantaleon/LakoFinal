@@ -1,27 +1,24 @@
 <?php
-// Verifica si se ha enviado el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recoge los datos del formulario
-    $nombre = $_POST["nombre"];
-    $email = $_POST["email"];
-    $mensaje = $_POST["mensaje"];
+$name = $_POST['name'];
+$mail = $_POST['mail'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
-    // Dirección de correo electrónico a la que se enviará el mensaje
-    $destinatario = "estudio@lako.com.ar";
+$header = 'From: ' . $mail . " \r\n";
+$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
+$header .= "Mime-Version: 1.0 \r\n";
+$header .= "Content-Type: text/plain";
 
-    // Asunto del correo electrónico
-    $asunto = "Nuevo mensaje de contacto desde tu sitio web";
+$message = "Este mensaje fue enviado por: " . $name . " \r\n";
+$message .= "Su e-mail es: " . $mail . " \r\n";
+$message .= "Teléfono de contacto: " . $phone . " \r\n";
+$message .= "Mensaje: " . $_POST['message'] . " \r\n";
+$message .= "Enviado el: " . date('d/m/Y', time());
 
-    // Cuerpo del correo electrónico
-    $contenido = "Nombre: $nombre\n";
-    $contenido .= "Email: $email\n";
-    $contenido .= "Mensaje:\n$mensaje";
+$para = 'estudio@lako.com.ar';
+$asunto = 'Tienes una nueva consulta de tu web';
 
-    // Envía el correo electrónico
-    mail($destinatario, $asunto, $contenido);
+mail($para, $asunto, utf8_decode($message), $header);
 
-    // Redirige al usuario a una página de confirmación
-    header("Location: gracias.html");
-    exit;
-}
+header("Location:index.html");
 ?>
