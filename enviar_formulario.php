@@ -15,7 +15,7 @@ $message .= "Teléfono de contacto: " . $phone . " \r\n";
 $message .= "Mensaje: " . $_POST['message'] . " \r\n";
 $message .= "Enviado el: " . date('d/m/Y', time());
 
-$para = 'estudio@lako.com.ar';
+$para = 'mmpantaleon@gmail.com';
 $asunto = 'Tienes una nueva consulta de tu web';
 
 mail($para, $asunto, utf8_decode($message), $header);
