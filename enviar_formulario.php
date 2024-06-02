@@ -1,24 +1,26 @@
 <?php
-$name = $_POST['name'];
-$mail = $_POST['mail'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $mensaje = $_POST['mensaje'];
 
-$header = 'From: ' . $mail . " \r\n";
-$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+    // Validar los datos (ejemplo simple)
+    if (!empty($nombre) && !empty($email) && !empty($mensaje)) {
+        // Procesar los datos, por ejemplo, enviarlos por email
+        $to = "mmpantaleon@gmail.com";
+        $subject = "Nuevo mensaje de contacto";
+        $body = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";
+        $headers = "From: $email";
 
-$message = "Este mensaje fue enviado por: " . $name . " \r\n";
-$message .= "Su e-mail es: " . $mail . " \r\n";
-$message .= "Teléfono de contacto: " . $phone . " \r\n";
-$message .= "Mensaje: " . $_POST['message'] . " \r\n";
-$message .= "Enviado el: " . date('d/m/Y', time());
-
-$para = 'mmpantaleon@gmail.com';
-$asunto = 'Tienes una nueva consulta de tu web';
-
-mail($para, $asunto, utf8_decode($message), $header);
-
-header("Location:index.html");
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Mensaje enviado con éxito.";
+        } else {
+            echo "Error al enviar el mensaje.";
+        }
+    } else {
+        echo "Todos los campos son obligatorios.";
+    }
+} else {
+    echo "Método de solicitud no válido.";
+}
 ?>
