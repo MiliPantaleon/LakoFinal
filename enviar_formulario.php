@@ -5,14 +5,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'];
     $mensaje = $_POST['mensaje'];
 
-    // Validar los datos (ejemplo simple)
+    // Validar los datos
     if (!empty($nombre) && !empty($email) && !empty($mensaje)) {
-        // Procesar los datos, por ejemplo, enviarlos por email
+        // Configurar destinatario y encabezados
         $to = "mmpantaleon@gmail.com";
         $subject = "Nuevo mensaje de contacto";
-        $body = "Nombre: $nombre\nEmail: $email\nPhone: $phone\nMensaje: $mensaje";
+        $body = "Nombre: $nombre\nEmail: $email\nTeléfono: $phone\nMensaje: $mensaje";
         $headers = "From: $email";
 
+        // Enviar el correo
         if (mail($to, $subject, $body, $headers)) {
             echo "Mensaje enviado con éxito.";
         } else {
