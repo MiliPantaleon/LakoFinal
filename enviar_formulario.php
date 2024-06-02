@@ -2,6 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $mensaje = $_POST['mensaje'];
 
     // Validar los datos (ejemplo simple)
@@ -9,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Procesar los datos, por ejemplo, enviarlos por email
         $to = "mmpantaleon@gmail.com";
         $subject = "Nuevo mensaje de contacto";
-        $body = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";
+        $body = "Nombre: $nombre\nEmail: $email\nPhone: $phone\nMensaje: $mensaje";
         $headers = "From: $email";
 
         if (mail($to, $subject, $body, $headers)) {
