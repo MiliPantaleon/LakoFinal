@@ -533,29 +533,34 @@ footer {
                 <div class="contact-form-section">
                     <form action="enviar_formulario.php" method="post" id="contactForm">
                         <h2>Enviar</h2>
-                        <div class="input-container">
-                            <input type="text" name="nombre" placeholder=" " required>
-                            <span>Tu Nombre</span>
+                        <div class="contact-form-section">
+                            <form action="enviar_formulario.php" method="post" id="contactForm">
+                                
+                                <div class="input-container">
+                                    <input type="text" name="nombre" placeholder=" " required>
+                                    <span>Tu Nombre <i class="fa fa-user"></i></span>
+                                </div>
+                                
+                                <div class="input-container">
+                                    <input type="email" name="email" placeholder=" " required>
+                                    <span>Tu mail <i class="fa fa-envelope"></i></span>
+                                </div>
+                                
+                                <div class="input-container">
+                                    <input type="tel" name="phone" placeholder=" " required>
+                                    <span>Tu teléfono <i class="fa fa-phone"></i></span>
+                                </div>
+                                
+                                <div class="input-container">
+                                    <textarea name="mensaje" placeholder=" " required></textarea>
+                                    <span>Provincia y ciudad <i class="fa fa-map"></i></span>
+                                </div>
+                                
+                                <div class="input-container">
+                                  <input type="submit" value="TRABAJEMOS JUNTOS" id="submitBtn"> 
+                              </div>
+                            </form>
                         </div>
-                    
-                        <div class="input-container">
-                            <input type="email" name="email" placeholder=" " required>
-                            <span>Tu mail</span>
-                        </div>
-                        
-                    
-                        <div class="input-container">
-                            <input type="tel" name="phone" placeholder=" " required>
-                            <span>Tu teléfono </span>
-                        </div>
-                    
-                        <div class="input-container">
-                            <textarea name="mensaje" placeholder=" " required></textarea>
-                            <span>Describinos tu consulta</span>
-                        </div>
-                    
-                        <div class="input-container">
-                            <input type="submit" value="Enviar">
                         </div>
                     </form>                    
                 </div>
@@ -642,23 +647,6 @@ footer {
     });
 </script>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío del formulario instantáneamente
 
-        // Aquí puedes agregar una validación adicional si es necesario
-        var submitBtn = document.getElementById('submitBtn');
-        
-        // Cambia el estilo del botón y añade el tic
-        submitBtn.classList.add('success');
-        submitBtn.value = 'Gracias por contactarnos!'; // Cambia el texto del botón
-
-        // Envía el formulario después de un breve retraso para mostrar el efecto
-        setTimeout(() => {
-            this.submit();
-        }, 2000);
-    });
-</script>
-  
 </body>
 </html>
