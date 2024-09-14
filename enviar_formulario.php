@@ -28,7 +28,7 @@ $headers = "From: " . $email . "\r\n" .
 // Enviar el correo
 if (mail($destinatario, $asunto, $mensaje, $headers)) {
     // Redirigir después de enviar el formulario
-    header("Location: https://stands.estudiolako.com"); // Asegúrate de que la URL sea correcta
+    header("Location: https://estudiolako.com/"); // Asegúrate de que la URL sea correcta
     exit();  // Asegúrate de detener el script después de la redirección
 } else {
     echo "Error al enviar el correo.";
