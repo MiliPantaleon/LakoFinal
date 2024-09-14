@@ -162,10 +162,7 @@ body {
             font-family: 'Noto Sans', sans-serif;  
         }
 
-        .main-section-header h2 {
-            font-size: 37px;
-            font-weight: bold;
-        }
+
 
         .main-section-header p {
             font-size: 28px;
@@ -187,8 +184,6 @@ body {
             min-width: 600px; 
             border-radius: 20px;
             box-shadow: 2px 4px 6px #818181;
-
-        
         }
         
         .contact-info-item {
@@ -499,7 +494,7 @@ footer {
    
 
 
-    <div class="main-section">
+<div class="main-section">
         <div class="main-section-header">
             <div class="main-container">
                 <h2>Estas planeando un nuevo proyecto?</h2>
@@ -530,30 +525,29 @@ footer {
                     </div>
                 </div>
 
-                <div class="contact-form-section">
-                    <form action="enviar_formulario.php" method="post" id="contactForm">
-                        <h2>Enviar</h2>
-                        <div class="contact-form-section">
-                            <form action="enviar_formulario.php" method="post" id="contactForm">
+                
+                    
+            <div class="contact-form-section">
+                <form action="enviar_formulario.php" method="post" id="contactForm">
                                 
                                 <div class="input-container">
                                     <input type="text" name="nombre" placeholder=" " required>
-                                    <span>Tu Nombre <i class="fa fa-user"></i></span>
+                                    <span>Tu Nombre</span>
                                 </div>
                                 
                                 <div class="input-container">
                                     <input type="email" name="email" placeholder=" " required>
-                                    <span>Tu mail <i class="fa fa-envelope"></i></span>
+                                    <span>Tu mail </i></span>
                                 </div>
                                 
                                 <div class="input-container">
                                     <input type="tel" name="phone" placeholder=" " required>
-                                    <span>Tu teléfono <i class="fa fa-phone"></i></span>
+                                    <span>Tu teléfono </span>
                                 </div>
                                 
                                 <div class="input-container">
                                     <textarea name="mensaje" placeholder=" " required></textarea>
-                                    <span>Provincia y ciudad <i class="fa fa-map"></i></span>
+                                    <span>Contanos tu consulta:  </span>
                                 </div>
                                 
                                 <div class="input-container">
@@ -562,11 +556,11 @@ footer {
                             </form>
                         </div>
                         </div>
-                    </form>                    
-                </div>
+            </form>                    
+        </div>
             </div>
         </div>
-    </div>
+  
 </body>
 
 
@@ -639,12 +633,32 @@ footer {
             menu.style.display = 'none';
         }
     });
-  </script>
-  <script>
+</script>
+
+<script>
     document.getElementById('whatsapp-icon').addEventListener('click', function () {
         // Reemplaza el número de teléfono con el tuyo
         window.open('https://wa.me/5491132416414', '_blank');
     });
 </script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario instantáneamente
+
+        // Aquí puedes agregar una validación adicional si es necesario
+        var submitBtn = document.getElementById('submitBtn');
+        
+        // Cambia el estilo del botón y añade el tic
+        submitBtn.classList.add('success');
+        submitBtn.value = 'Gracias por contactarnos!'; // Cambia el texto del botón
+
+        // Envía el formulario después de un breve retraso para mostrar el efecto
+        setTimeout(() => {
+            this.submit();
+        }, 2000);
+    });
+</script>
+
 </body>
 </html>
