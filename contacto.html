@@ -461,6 +461,46 @@ footer {
 
 
 }
+
+@media only screen and (max-width: 600px)and (-webkit-min-device-pixel-ratio: 0) {
+    .contact-form-section {
+        padding: 15px;
+    }
+
+    .contact-form-section form {
+        width: 100%; /* Ocupar todo el ancho disponible */
+    }
+
+    .input-container input,
+    .input-container textarea {
+        appearance: none; 
+        font-size: 14px; /* Ajuste para móviles */
+        padding: 10px;
+        box-shadow: none; /* Elimina el sombreado por defecto en los campos */
+    }
+
+    .input-container span {
+        font-size: 13px; /* Etiquetas más pequeñas para móviles */
+      
+    }
+
+    .input-container input[type="submit"] {
+        width: 100%; /* Ajusta el ancho del botón */      
+    }
+
+  @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 0) {
+  .input-container input:focus~span,
+  .input-container textarea:focus~span,
+  .input-container input:not(:placeholder-shown)~span,
+  .input-container textarea:not(:placeholder-shown)~span,
+  .input-container input:valid~span,
+  .input-container textarea:valid~span {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+}
+
    
 
 
