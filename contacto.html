@@ -225,6 +225,8 @@ body {
 
 
 
+
+
         .contact-form-section h2 {  
             font-size: 16px;
             font-family: 'Noto Sans', sans-serif;
@@ -269,22 +271,53 @@ body {
             transform: translateY(-20px);
         }
 
-        .input-container input[type="submit"] {
-            width: 100%;
-            background: #5551ff;
-            color: #FFF;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 18px;
-            font-family: 'Noto Sans', sans-serif;
-            transition: 0.5s;
-        }
 
-        .input-container input[type="submit"]:hover {
-            background: #FFF;
-            color: #5551ff;
-        }
+
+.input-container input:focus~span,
+.input-container textarea:focus~span,
+.input-container input:not(:placeholder-shown)~span,
+.input-container textarea:not(:placeholder-shown)~span {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+
+
+.input-container input[type="submit"] {
+    width: 100%;
+    background: #14152D;
+    color:white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    transition: 0.5s;
+    border-radius: 50px;
+}
+
+.input-container input[type="submit"]:hover {
+    background: #FFF;
+    color: #5551ff;
+}
+
+/* Estilo cuando el formulario ha sido enviado */
+#submitBtn.success {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    position: relative;
+}
+
+/* Añade un tic dentro del botón */
+#submitBtn.success::after {
+    content: "\2714"; /* Símbolo de tic */
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 
 @media screen and (max-width: 768px) {
@@ -313,9 +346,6 @@ body {
 
 }
     
-
-           
-        
 
 .main-footer {
       padding: 20px 0;
@@ -501,26 +531,27 @@ footer {
                 </div>
 
                 <div class="contact-form-section">
-                    <form action="enviar_formulario.php" method="post">
+                    <form action="enviar_formulario.php" method="post" id="contactForm">
                         <h2>Enviar</h2>
                         <div class="input-container">
-                            <input type="text" required name="nombre">
-                            <span>Nombre y Apellido</span>
+                            <input type="text" name="nombre" placeholder=" " required>
+                            <span>Tu Nombre</span>
                         </div>
                     
                         <div class="input-container">
-                            <input type="email" required name="email">
-                            <span>Email</span>
+                            <input type="email" name="email" placeholder=" " required>
+                            <span>Tu mail</span>
+                        </div>
+                        
+                    
+                        <div class="input-container">
+                            <input type="tel" name="phone" placeholder=" " required>
+                            <span>Tu teléfono </span>
                         </div>
                     
                         <div class="input-container">
-                            <input type="tel" required name="phone">
-                            <span>Teléfono</span>
-                        </div>
-                    
-                        <div class="input-container">
-                            <textarea required name="mensaje"></textarea>
-                            <span>Contanos tu consulta:</span>
+                            <textarea name="mensaje" placeholder=" " required></textarea>
+                            <span>Describinos tu consulta</span>
                         </div>
                     
                         <div class="input-container">
@@ -608,6 +639,24 @@ footer {
     document.getElementById('whatsapp-icon').addEventListener('click', function () {
         // Reemplaza el número de teléfono con el tuyo
         window.open('https://wa.me/5491132416414', '_blank');
+    });
+</script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario instantáneamente
+
+        // Aquí puedes agregar una validación adicional si es necesario
+        var submitBtn = document.getElementById('submitBtn');
+        
+        // Cambia el estilo del botón y añade el tic
+        submitBtn.classList.add('success');
+        submitBtn.value = 'Gracias por contactarnos!'; // Cambia el texto del botón
+
+        // Envía el formulario después de un breve retraso para mostrar el efecto
+        setTimeout(() => {
+            this.submit();
+        }, 2000);
     });
 </script>
   
