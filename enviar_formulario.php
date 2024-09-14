@@ -16,7 +16,7 @@ $mensaje .= "Vive en: " . $mensaje_usuario . ",\r\n";
 
 // Definir mail de recepción y asunto
 $destinatario = "estudio@lako.com.ar";
-$asunto = "Hola quiero trabajar con LAKO stands";
+$asunto = "Hola quiero trabajar con LAKO";
 
 // Construir las cabeceras
 $headers = "From: " . $email . "\r\n" .
